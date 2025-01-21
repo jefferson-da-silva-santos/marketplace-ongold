@@ -21,4 +21,10 @@
   gap: 0;
 }
 
+.input-busca {
+  padding: 1rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
 /*# sourceMappingURL=styles.css.map */
