@@ -3,7 +3,7 @@ import React from "react";
 const CardProduct = ({title, imgSrc, description, webSitePrice, storePrice}) => {
   return (
     <div className="card-product">
-      <div className="card-product__image" style={{backgroundImage: `url(${imgSrc})`}}></div>
+      <div className="group-image"><img src={imgSrc} alt="Produto" className="card-product__image"/></div>
       <div className="card-product__info">
         <h2 className="card-product__title">{title}</h2>
         <p className="card-product__description">{description}</p>

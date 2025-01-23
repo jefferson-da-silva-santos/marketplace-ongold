@@ -22,6 +22,10 @@ const HomePage = ({ payment }) => {
     }
   }
 
+  const filterArrProducts = (filter) => {
+    return productsArr.filter((product) => product.category === filter);
+  }
+
   const filterCategories = (arr) => {
     const arrCtg = Array.from(new Set(arr.map(item => item.category)));
     arrCtg.unshift('Todas');
@@ -85,7 +89,7 @@ const HomePage = ({ payment }) => {
       </nav>
       <main>
         <BannerHome currentImgBanner={currentImgBanner} />
-        <CardFillterProducts arrCategory={categories}/>
+        <CardFillterProducts filterArrProducts={filterArrProducts} setProducts={setProducts} arrCategory={categories} productsArr={productsArr}/>
         <GroupProducts>
           {
             products.map(item => {

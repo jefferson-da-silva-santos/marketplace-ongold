@@ -132,6 +132,7 @@
 .container-home {
   min-height: 100vh;
   background-color: darken(white, 6%);
+  padding-bottom: 2rem;
 
   &__nav {
     background-image: linear-gradient(
@@ -238,7 +239,7 @@
 .group-products {
   width: 100%;
   background-color: transparent;
-  max-width: 60em;
+  max-width: 56em;
   margin: auto;
   @include flex-box(column, center, center, 1rem);
 }
@@ -248,19 +249,20 @@
   height: 9em;
   @include grid-layout(10em 1fr, 1fr, 1.5rem, 0);
   background-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-right: 4rem;
   overflow: hidden;
   box-shadow: 0px 0px 5px rgba(48, 48, 48, 0.144);
   position: relative;
 
+  .group-image {
+    @include flex-box(row, center, center, 0);
+  }
+
   &__image {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border: 1px solid #d1d1d1;
+    width: 8rem;
+    height: 7em;
+    border-radius: 10px
   }
 
   &__info {
@@ -309,15 +311,18 @@
 .card-fillter-products {
   width: 100%;
   margin: auto;
-  max-width: 60em;
+  max-width: 56em;
   @include flex-box(row, space-between, center, 0);
   padding: 0 0 1.5rem 0;
+  color: gray;
 }
 
 .selectCategory {
   border: none;
   background-color: transparent;
   outline: none;
+  color: gray;
+  cursor: pointer;
   font-size: 1rem;
 }
 

@@ -126,6 +126,7 @@
 .container-home {
   min-height: 100vh;
   background-color: rgb(239.7, 239.7, 239.7);
+  padding-bottom: 2rem;
 }
 .container-home__nav {
   background-image: linear-gradient(to bottom, rgb(175, 0, 0), rgb(134.2, 0, 0));
@@ -246,7 +247,7 @@
 .group-products {
   width: 100%;
   background-color: transparent;
-  max-width: 60em;
+  max-width: 56em;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -264,19 +265,23 @@
   column-gap: 1.5rem;
   row-gap: 0;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-right: 4rem;
   overflow: hidden;
   box-shadow: 0px 0px 5px rgba(48, 48, 48, 0.144);
   position: relative;
 }
+.card-product .group-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
 .card-product__image {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border: 1px solid #d1d1d1;
+  width: 8rem;
+  height: 7em;
+  border-radius: 10px;
 }
 .card-product__info {
   display: flex;
@@ -325,19 +330,22 @@
 .card-fillter-products {
   width: 100%;
   margin: auto;
-  max-width: 60em;
+  max-width: 56em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 0;
   padding: 0 0 1.5rem 0;
+  color: gray;
 }
 
 .selectCategory {
   border: none;
   background-color: transparent;
   outline: none;
+  color: gray;
+  cursor: pointer;
   font-size: 1rem;
 }
 
