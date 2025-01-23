@@ -5,7 +5,7 @@ import LogoLogin from "../LogoLogin";
 import GroupInput from "../GroupInput";
 import users from '../../data/users.json';
 
-const LoginForm = ({ login }) => {
+const LoginForm = ({ login, changeMessage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,12 +14,13 @@ const LoginForm = ({ login }) => {
     e.preventDefault();
     if (validateDateUsers(email, password)) {
       if (searchUser(email, password)) {
+        changeMessage('Login realizado', 'rgb(115, 187, 115)');
         login();
       } else {
-        alert('O usuário não existe');
+        changeMessage('O usuário não existe!', 'rgb(255, 96, 96)');
       } 
     } else {
-      alert('Email ou senha inválidos');
+      changeMessage('Passe um email e uma senha válidos!', 'rgb(255, 96, 96)');
     }
   };
 

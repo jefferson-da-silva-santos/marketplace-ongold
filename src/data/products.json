@@ -1,0 +1,299 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 14",
+    "description": "Smartphone de alta qualidade com câmera de 12MP e tela de 6,1 polegadas",
+    "category": "Eletrônicos",
+    "srcImg": "https://www.estadao.com.br/recomenda/wp-content/uploads/2023/08/thai-nguyen-fw_KhcwHmlY-unsplash.jpg.webp",
+    "websitePrice": 5999.99,
+    "storePrice": 6499.99
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S22",
+    "description": "Smartphone de alta qualidade com câmera de 50MP e tela de 6,2 polegadas",
+    "category": "Eletrônicos",
+    "srcImg": "https://alliedrecommerce.vtexassets.com/arquivos/ids/182334/https---s3.amazonaws.com-allied.alliedmktg.com-img-RECTCDS1820-1.jpg?v=638098334165330000",
+    "websitePrice": 5499.99,
+    "storePrice": 5999.99
+  },
+  {
+    "id": 3,
+    "name": "PlayStation 5",
+    "description": "Console de jogos de alta qualidade com gráficos 4K e armazenamento de 825GB",
+    "category": "Videogames",
+    "srcImg": "https://hips.hearstapps.com/hmg-prod/images/pop-ps5-pro-672946ffa81ec.jpg?crop=0.502xw:1.00xh;0.231xw,0&resize=1120:",
+    "websitePrice": 4499.99,
+    "storePrice": 4999.99
+  },
+  {
+    "id": 4,
+    "name": "Xbox Series X",
+    "description": "Console de jogos de alta qualidade com gráficos 4K e armazenamento de 1TB",
+    "category": "Videogames",
+    "srcImg": "https://m.media-amazon.com/images/I/516pVDAQMnL._AC_SY200_QL15_.jpg",
+    "websitePrice": 4999.99,
+    "storePrice": 5499.99
+  },
+  {
+    "id": 5,
+    "name": "Nike Air Max 270",
+    "description": "Tênis de corrida de alta qualidade com amortecimento e estabilidade",
+    "category": "Esportes",
+    "srcImg": "https://acdn.mitiendanube.com/stores/002/052/086/products/962097ac-376a-4a37-bc3d-4133d65870e71-67f546e5f486db7b1016714619999510-1024-1024.jpeg",
+    "websitePrice": 399.99,
+    "storePrice": 449.99
+  },
+  {
+    "id": 6,
+    "name": "Adidas Superstar",
+    "description": "Tênis de basquete de alta qualidade com amortecimento e estabilidade",
+    "category": "Esportes",
+    "srcImg": "https://acdn.mitiendanube.com/stores/001/900/131/products/image21-d0a87a8ff6fd2b3ac316910619119298-640-0.jpeg",
+    "websitePrice": 349.99,
+    "storePrice": 399.99
+  },
+  {
+    "id": 7,
+    "name": "Canon EOS 80D",
+    "description": "Câmera DSLR de alta qualidade com sensor de 24,2MP e tela de 3 polegadas",
+    "category": "Fotografia",
+    "srcImg": "https://cdn.awsli.com.br/600x450/187/187298/produto/12038660/a4833c5e40.jpg",
+    "websitePrice": 2499.99,
+    "storePrice": 2999.99
+  },
+  {
+    "id": 8,
+    "name": "Sony Alpha a6400",
+    "description": "Câmera mirrorless de alta qualidade com sensor de 24,2MP e tela de 3 polegadas",
+    "category": "Fotografia",
+    "srcImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSoN9STbr-xX2Lg1SFLca3ag69vP7AVGgcqw&s",
+    "websitePrice": 1999.99,
+    "storePrice": 2499.99
+  },
+  {
+    "id": 9,
+    "name": "Dell Inspiron 15",
+    "description": "Notebook de alta qualidade com processador Intel Core i5 e tela de 15,6 polegadas",
+    "category": "Informática",
+    "srcImg": "https://scoobyinformatica.com.br/wp-content/uploads/2022/08/IMG_20220702_124852-scaled.jpg",
+    "websitePrice": 2999.99,
+    "storePrice": 3499.99
+  },
+  {
+    "id": 10,
+    "name": "HP Envy x360",
+    "description": "Notebook de alta qualidade com processador AMD Ryzen 7 e tela de 15,6 polegadas",
+    "category": "Informática",
+    "srcImg": "https://www.cnet.com/a/img/resize/c1f9d6a1c6b9b9d2eabe3dc198493cd0a4947a3b/hub/2020/09/22/36b733d1-7a83-4b00-b6d9-71290a932bf7/hp-envy-x360-13-01.jpg?auto=webp&fit=crop&height=1200&width=1200",
+    "websitePrice": 3499.99,
+    "storePrice": 3999.99
+  },
+  {
+    "id": 11,
+    "name": "Apple Watch Series 7",
+    "description": "Relógio inteligente de alta qualidade com tela de  1,9 polegadas e monitoramento de saúde",
+    "category": "Acessórios",
+    "srcImg": "https://promotop.net/wp-content/uploads/2022/11/apple-watch-series-7-41mm-gps-caixa-azul-aluminio-pulseira-esportiva.jpg",
+    "websitePrice": 399.99,
+    "storePrice": 449.99
+  },
+  {
+    "id": 12,
+    "name": "Samsung Galaxy Watch 4",
+    "description": "Relógio inteligente com monitoramento de saúde e fitness",
+    "category": "Acessórios",
+    "srcImg": "https://images.samsung.com/iran/galaxy-watch4/feature/galaxy-watch4-green-design-your-own-mo.jpg",
+    "websitePrice": 349.99,
+    "storePrice": 399.99
+  },
+  {
+    "id": 13,
+    "name": "Bose QuietComfort 35 II",
+    "description": "Fones de ouvido com cancelamento de ruído e som de alta qualidade",
+    "category": "Áudio",
+    "srcImg": "https://www.cnet.com/a/img/resize/9d56072ccf4afebce8fb20e8d4e85c8d330399e1/hub/2017/09/26/4c6ec5f4-8dcb-45c7-8770-e87208e3d3ae/17bose-quietcomfort-35-ii.jpg?auto=webp&fit=crop&height=1200&width=1200",
+    "websitePrice": 899.99,
+    "storePrice": 999.99
+  },
+  {
+    "id": 14,
+    "name": "Sony WH-1000XM4",
+    "description": "Fones de ouvido com cancelamento de ruído e som de alta qualidade",
+    "category": "Áudio",
+    "srcImg": "https://img.odcdn.com.br/wp-content/uploads/2020/10/20201002041932.jpg",
+    "websitePrice": 999.99,
+    "storePrice": 1099.99
+  },
+  {
+    "id": 15,
+    "name": "GoPro HERO10",
+    "description": "Câmera de ação com gravação em 5.3K e estabilização de imagem",
+    "category": "Fotografia",
+    "srcImg": "https://www.notebookcheck.info/fileadmin/Notebooks/News/_nc3/download6756.jpg",
+    "websitePrice": 499.99,
+    "storePrice": 549.99
+  },
+  {
+    "id": 16,
+    "name": "Fitbit Charge 5",
+    "description": "Relógio fitness com monitoramento de saúde e GPS integrado",
+    "category": "Acessórios",
+    "srcImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr-2vNUjjcbN_giQwPMgizfGpiR012Bgq5JA&s",
+    "websitePrice": 199.99,
+    "storePrice": 249.99
+  },
+  {
+    "id": 17,
+    "name": "LG OLED55CXPUA",
+    "description": "TV OLED de 55 polegadas com qualidade de imagem 4K",
+    "category": "Eletrônicos",
+    "srcImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoo_A5ivkMTJ92_pe0rBMyS87C9HfiTgts8Q&s",
+    "websitePrice": 2499.99,
+    "storePrice": 2999.99
+  },
+  {
+    "id": 18,
+    "name": "Samsung QN90A",
+    "description": "TV QLED de 65 polegadas com qualidade de imagem 4K",
+    "category": "Eletrônicos",
+    "srcImg": "https://assets-prd.ignimgs.com/2021/12/07/blogroll-1638843965307.jpg",
+    "websitePrice": 2999.99,
+    "storePrice": 3499.99
+  },
+  {
+    "id": 19,
+    "name": "Nikon D3500",
+    "description": "Câmera DSLR de entrada com sensor de 24,2MP",
+    "category": "Fotografia",
+    "srcImg": "https://cdn.mos.cms.futurecdn.net/UvFNk8pwcKc8MzXpWBAGFh-1200-80.jpg",
+    "websitePrice": 1999.99,
+    "storePrice": 2499.99
+  },
+  {
+    "id": 20,
+    "name": "Microsoft Surface Pro 7",
+    "description": "Tablet com teclado destacável e processador Intel Core i5",
+    "category": "Informática",
+    "srcImg": "https://m.media-amazon.com/images/I/61qS1eDVy9S.jpg",
+    "websitePrice": 3499.99,
+    "storePrice": 3999.99
+  },
+  {
+    "id": 24,
+    "name": "Camisa de Linho",
+    "description": "Camisa de linho com design elegante e tecido de alta qualidade",
+    "category": "Vestuário",
+    "srcImg": "https://cdn.awsli.com.br/2500x2500/1035/1035216/produto/253896217/camisa-linho-listrada-bege-mc-kpn8j26ozd.jpg",
+    "websitePrice": 99.99,
+    "storePrice": 129.99
+  },
+  {
+    "id": 25,
+    "name": "Vestido de Noite",
+    "description": "Vestido de noite com design luxuoso e tecido de alta qualidade",
+    "category": "Vestuário",
+    "srcImg": "https://http2.mlstatic.com/D_NQ_NP_925020-MLB72905506790_112023-O.webp",
+    "websitePrice": 199.99,
+    "storePrice": 249.99
+  },
+  {
+    "id": 26,
+    "name": "Calça Jeans",
+    "description": "Calça jeans com design confortável e tecido de alta qualidade",
+    "category": "Vestuário",
+    "srcImg": "https://www.revanche.com.br/media/catalog/product/cache/8e5872966dd88cc0e998d2d2c4eec43a/c/a/cal_a-jeans-com-el_stano-e-c_s-interno-personalizado-atacado-masculina-revanche-gurupi386a4527.jpg",
+    "websitePrice": 79.99,
+    "storePrice": 99.99
+  },
+  {
+    "id": 31,
+    "name": "Blazer de Cetim",
+    "description": "Blazer de cetim com design elegante e tecido de alta qualidade",
+    "category": "Vestuário",
+    "srcImg": "https://cdn-images.farfetch-contents.com/22/24/86/34/22248634_52063096_600.jpg",
+    "websitePrice": 149.99,
+    "storePrice": 199.99
+  },
+  {
+    "id": 32,
+    "name": "Vestido de Praia",
+    "description": "Vestido de praia com design confortável e tecido de alta qualidade",
+    "category": "Vestuário",
+    "srcImg": "https://cdn.sistemawbuy.com.br/arquivos/44a1dfb848d25121298a2d4ddf18443a/produtos/6633bed0decfd/saida_de_praia_vestido-1-6633bed3b2057.jpg",
+    "websitePrice": 99.99,
+    "storePrice": 129.99
+  },
+  {
+    "id": 33,
+    "name": "Camisa de Manga Longa",
+    "description": "Camisa de manga longa com design elegante e tecido de alta qualidade",
+    "category": "Vestuário",
+    "srcImg": "https://a-static.mlcdn.com.br/800x560/camiseta-manga-longa-com-punho-malha-fria-g1-g2-g3-plus-size-new-jeans/magazinecambuy/53dab58cc37811edbe024201ac18502f/c04c73d1f3b7e8a53cbed1d017339baf.jpeg",
+    "websitePrice": 79.99,
+    "storePrice": 99.99
+  },
+  {
+    "id": 34,
+    "name": "Saia de Tecido Leve",
+    "description": "Saia de tecido leve com design confortável e tecido de alta qualidade",
+    "category": "Vestuário",
+    "srcImg": "https://divamoderna.com.br/cdn/shop/products/Se9d71350ded64ab0a88c9a7d4b97f91aD_1050x.jpg?v=1711619573",
+    "websitePrice": 69.99,
+    "storePrice": 89.99
+  },
+  {
+    "id": 35,
+    "name": "Pão de Centeio Artesanal",
+    "description": "Pão de centeio artesanal feito com ingredientes naturais e embalagem personalizada",
+    "category": "Gastronomia",
+    "srcImg": "https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/beirario/media/uploads/produtos/foto/mxhoapjc/file.jpg",
+    "websitePrice": 29.99,
+    "storePrice": 39.99
+  },
+  {
+    "id": 36,
+    "name": "Queijo Orgânico",
+    "description": "Queijo de cabra orgânico produzido com leite fresco e embalagem ecológica",
+    "category": "Gastronomia",
+    "srcImg": "https://acdn.mitiendanube.com/stores/738/706/products/queijo-parmesao-premium-fracionado1-2be9dd2eed2968340f16451759677838-1024-1024.jpg",
+    "websitePrice": 49.99,
+    "storePrice": 59.99
+  },
+  {
+    "id": 37,
+    "name": "Açúcar Orgânico",
+    "description": "Açúcar orgânico produzido sem aditivos químicos e embalagem ecológica",
+    "category": "Gastronomia",
+    "srcImg": "https://superprix.vteximg.com.br/arquivos/ids/174589-600-600/Acucar-Cristal-Uniao-Cristalcucar-1kg.png?v=636213802015630000",
+    "websitePrice": 19.99,
+    "storePrice": 29.99
+  },
+  {
+    "id": 38,
+    "name": "Manteiga de Amendoim Artesanal",
+    "description": "Manteiga de amendoim artesanal feita com amendoins frescos e embalagem personalizada",
+    "category": "Gastronomia",
+    "srcImg": "https://static.itdg.com.br/images/360-240/4882817c735988159e73b84c665c0b13/shutterstock-253837162-1-.jpg",
+    "websitePrice": 39.99,
+    "storePrice": 49.99
+  },
+  {
+    "id": 39,
+    "name": "Chá de Ervas Orgânico",
+    "description": "Chá de ervas orgânico produzido com ervas frescas e embalagem ecológica",
+    "category": "Gastronomia",
+    "srcImg": "https://images.tcdn.com.br/img/img_prod/602464/cha_6_ervas_doce_dr_oetker_sache_10g_caixa_15_unidades_1437_1_fbd099d7647b65aed13c0b46cac1b407.jpg",
+    "websitePrice": 24.99,
+    "storePrice": 34.99
+  },
+  {
+    "id": 40,
+    "name": "Bolos de Fubá Artesanais",
+    "description": "Bolos de fubá artesanais feitos com ingredientes naturais e embalagem personalizada",
+    "category": "Gastronomia",
+    "srcImg": "https://bakeandcakegourmet.com.br/uploads/site/receitas/bolo-de-fuba-com-ingrediente-surpresa-ec19h3w5.jpg",
+    "websitePrice": 49.99,
+    "storePrice": 59.99
+  }
+]
