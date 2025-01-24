@@ -98,15 +98,14 @@ const HomePage = ({ payment, user }) => {
               onChange={(e) => {
                 const searchValue = (e.target as HTMLInputElement).value;
                 if (searchValue === "") {
-                  // Retorna todos os produtos quando o campo está vazio
                   setProducts(productsArr);
                 } else {
-                  // Aplica o filtro usando o array original
                   const filteredProducts = productsArr.filter((product) =>
                     product.name.toLowerCase().includes(searchValue.toLowerCase())
                   );
                   setProducts(filteredProducts);
                 }
+                setCurrentPage(0);
               }}
             />
             <a href="" className="btn-filter">

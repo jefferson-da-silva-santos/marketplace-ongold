@@ -430,5 +430,95 @@
     "srcImg": "https://static.myshop.cl/12446/1_1680291158000.jpg",
     "websitePrice": 299.99,
     "storePrice": 349.99
+  },
+  {
+    "id": 56,
+    "name": "Mel Orgânico",
+    "description": "Mel puro e orgânico, extraído de forma sustentável",
+    "category": "Gastronomia",
+    "srcImg": "https://zootecniabrasil.com/wp-content/uploads/2021/03/naom_5d1f02f162859.jpg",
+    "websitePrice": 39.99,
+    "storePrice": 49.99
+  },
+  {
+    "id": 57,
+    "name": "Azeite de Oliva Extra Virgem",
+    "description": "Azeite de oliva premium com acidez máxima de 0,2%",
+    "category": "Gastronomia",
+    "srcImg": "https://applicativa-marketplace-prod.s3.amazonaws.com/produtos/azeite-de-oliva-extra-virgem-cocinero-250ml-2.webp",
+    "websitePrice": 59.99,
+    "storePrice": 69.99
+  },
+  {
+    "id": 58,
+    "name": "Pasta de Castanha de Caju",
+    "description": "Pasta artesanal feita com castanhas selecionadas",
+    "category": "Gastronomia",
+    "srcImg": "https://cdn.awsli.com.br/1411/1411579/produto/100559348/2ae8667388.jpg",
+    "websitePrice": 49.99,
+    "storePrice": 59.99
+  },
+  {
+    "id": 59,
+    "name": "Granola Caseira",
+    "description": "Granola feita com ingredientes naturais e sem açúcar",
+    "category": "Gastronomia",
+    "srcImg": "https://images.tcdn.com.br/img/editor/up/1043512/Granola_Green_1.jpg",
+    "websitePrice": 29.99,
+    "storePrice": 39.99
+  },
+  {
+    "id": 60,
+    "name": "Café Gourmet em Grãos",
+    "description": "Café de alta qualidade, torrado e embalado na origem",
+    "category": "Gastronomia",
+    "srcImg": "https://img.freepik.com/fotos-premium/frescura-taza-pausa-cafe-gourmet-naturaleza_198067-1043688.jpg",
+    "websitePrice": 49.99,
+    "storePrice": 59.99
+  },
+  {
+    "id": 61,
+    "name": "Chocolates Gourmet Belga",
+    "description": "Chocolate belga artesanal com alto teor de cacau e sabores variados",
+    "category": "Gastronomia",
+    "srcImg": "https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2024/06/25/1264565789-chocolate-2-e1711390111453.jpg",
+    "websitePrice": 79.99,
+    "storePrice": 89.99
+  },
+  {
+    "id": 62,
+    "name": "Vinagre Balsâmico Premium",
+    "description": "Vinagre balsâmico envelhecido ideal para temperos e pratos especiais",
+    "category": "Gastronomia",
+    "srcImg": "https://marata.com.br/wp-content/uploads/2020/08/vinagre_balsamico.jpg",
+    "websitePrice": 69.99,
+    "storePrice": 79.99
+  },
+  {
+    "id": 63,
+    "name": "Biscoitos Artesanais Integrais",
+    "description": "Biscoitos integrais feitos com grãos naturais e sem conservantes",
+    "category": "Gastronomia",
+    "srcImg": "https://www.assai.com.br/sites/default/files/blog/mao_de_uma_pessoa_negra_segurando_um_biscoito_-_dia_do_biscoito_-_assai_atacadista_0.jpg",
+    "websitePrice": 29.99,
+    "storePrice": 39.99
+  },
+  {
+    "id": 64,
+    "name": "Molho de Pimenta Artesanal",
+    "description": "Molho de pimenta artesanal com toque defumado e ingredientes frescos",
+    "category": "Gastronomia",
+    "srcImg": "https://images.tcdn.com.br/img/img_prod/716321/molho_de_pimenta_sriracha_270ml_821_1_97d93a8016852293745c33648a944c9e.png",
+    "websitePrice": 24.99,
+    "storePrice": 34.99
+  },
+  {
+    "id": 65,
+    "name": "Farinha de Amêndoas Orgânica",
+    "description": "Farinha de amêndoas de alta qualidade, ideal para receitas saudáveis",
+    "category": "Gastronomia",
+    "srcImg": "https://images.tcdn.com.br/img/img_prod/637387/farinha_de_amendoas_702_1_866d992232104fc35ae35afa8c32a9d4_20240718165655.jpg",
+    "websitePrice": 49.99,
+    "storePrice": 59.99
   }
 ]
