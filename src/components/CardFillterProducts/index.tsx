@@ -8,7 +8,6 @@ const CardFillterProducts = ({ arrCategory, filterArrProducts, setProducts, prod
   return (
     <div className="card-fillter-products">
       <span className="currentFilter">
-        <i className="bi bi-caret-right"></i>
         {currentCateory}
       </span>
       <select

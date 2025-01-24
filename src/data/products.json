@@ -295,5 +295,140 @@
     "srcImg": "https://bakeandcakegourmet.com.br/uploads/site/receitas/bolo-de-fuba-com-ingrediente-surpresa-ec19h3w5.jpg",
     "websitePrice": 49.99,
     "storePrice": 59.99
+  },
+  {
+    "id": 41,
+    "name": "Smartwatch Xiaomi Mi Band 7",
+    "description": "Relógio inteligente com monitoramento de saúde e design moderno",
+    "category": "Acessórios",
+    "srcImg": "https://acdn.mitiendanube.com/stores/002/013/053/products/1733060526674c67aea5963-c02a3ba33ab283900c17330605268645-1024-1024.jpg",
+    "websitePrice": 299.99,
+    "storePrice": 349.99
+  },
+  {
+    "id": 42,
+    "name": "Notebook Lenovo Ideapad 3",
+    "description": "Notebook com processador AMD Ryzen 5 e tela de 14 polegadas",
+    "category": "Informática",
+    "srcImg": "https://fujiokadistribuidor.vteximg.com.br/arquivos/ids/240846-292-292/p_55555_alta_1.png",
+    "websitePrice": 2599.99,
+    "storePrice": 2999.99
+  },
+  {
+    "id": 43,
+    "name": "Câmera Instantânea Fujifilm Instax Mini 11",
+    "description": "Câmera instantânea compacta e fácil de usar",
+    "category": "Fotografia",
+    "srcImg": "https://images-americanas.b2w.io/produtos/7362039172/imagens/camera-instantanea-fujifilm-instax-mini-12-lilas-candy/7362039181_1_large.jpg",
+    "websitePrice": 499.99,
+    "storePrice": 549.99
+  },
+  {
+    "id": 44,
+    "name": "Fone de Ouvido JBL Tune 510BT",
+    "description": "Fone de ouvido Bluetooth com som de alta qualidade",
+    "category": "Áudio",
+    "srcImg": "https://m.media-amazon.com/images/I/61kFL7ywsZS._AC_UF1000,1000_QL80_.jpg",
+    "websitePrice": 299.99,
+    "storePrice": 349.99
+  },
+  {
+    "id": 45,
+    "name": "Tênis Puma Smash V2",
+    "description": "Tênis casual com design moderno e confortável",
+    "category": "Esportes",
+    "srcImg": "https://static.ativaesportes.com.br/public/ativaesportes/imagens/produtos/tenis-puma-smash-v2-feminino-386162-01-64de0d66d9eb1.jpg",
+    "websitePrice": 249.99,
+    "storePrice": 299.99
+  },
+  {
+    "id": 46,
+    "name": "Cafeteira Nespresso Essenza Mini",
+    "description": "Cafeteira compacta com design elegante e cápsulas exclusivas",
+    "category": "Eletrônicos",
+    "srcImg": "https://images-americanas.b2w.io/produtos/43964128/imagens/cafeteira-nespresso-essenza-mini-d30-preta-127v-cafe-espresso/43964128_1_large.jpg",
+    "websitePrice": 399.99,
+    "storePrice": 449.99
+  },
+  {
+    "id": 47,
+    "name": "Bolsa de Couro Feminina",
+    "description": "Bolsa de couro legítimo com design elegante",
+    "category": "Vestuário",
+    "srcImg": "https://img.irroba.com.br/fit-in/600x600/filters:fill(fff):quality(80)/jefcouro/catalog/produtos/3937/img-6607.jpg",
+    "websitePrice": 199.99,
+    "storePrice": 249.99
+  },
+  {
+    "id": 48,
+    "name": "Camiseta Básica Masculina",
+    "description": "Camiseta de algodão com design básico e confortável",
+    "category": "Vestuário",
+    "srcImg": "https://static.deluccaclassico.com.br/public/deluccaclassico/imagens/produtos/camiseta-basica-masculina-cinza-6537cd8441a17.jpg",
+    "websitePrice": 49.99,
+    "storePrice": 69.99
+  },
+  {
+    "id": 49,
+    "name": "Mochila para Notebook",
+    "description": "Mochila resistente com compartimento para notebook de até 15 polegadas",
+    "category": "Acessórios",
+    "srcImg": "https://http2.mlstatic.com/D_NQ_NP_703586-MLB53525043192_012023-O.webp",
+    "websitePrice": 149.99,
+    "storePrice": 199.99
+  },
+  {
+    "id": 50,
+    "name": "Kindle Paperwhite",
+    "description": "Leitor de e-books com tela antirreflexo de 6,8 polegadas",
+    "category": "Eletrônicos",
+    "srcImg": "https://mirandacomputacao.jetassets.com.br/produto/46447-principal.png",
+    "websitePrice": 599.99,
+    "storePrice": 699.99
+  },
+  {
+    "id": 51,
+    "name": "Panela de Pressão Elétrica",
+    "description": "Panela de pressão elétrica com múltiplas funções e segurança",
+    "category": "Eletrônicos",
+    "srcImg": "https://m.media-amazon.com/images/I/51zXHW5nVjL._AC_UF894,1000_QL80_.jpg",
+    "websitePrice": 399.99,
+    "storePrice": 449.99
+  },
+  {
+    "id": 52,
+    "name": "Suporte Articulado para TV",
+    "description": "Suporte de parede articulado para TVs de até 65 polegadas",
+    "category": "Eletrônicos",
+    "srcImg": "https://static.superproatacado.com.br/storage/1000/suporte-tv-lcd-led-kala-10-a-55-3-mov-pr_1_1595620139.jpg",
+    "websitePrice": 149.99,
+    "storePrice": 199.99
+  },
+  {
+    "id": 53,
+    "name": "Carregador Sem Fio",
+    "description": "Carregador sem fio compatível com dispositivos Qi",
+    "category": "Eletrônicos",
+    "srcImg": "https://a-static.mlcdn.com.br/800x560/carregador-sem-fio-wireless-ultra-rapido-preto-10w-multilaser-cb130/ledtecsbvariedades/6e8ea80aa9c011ee9f9f4201ac185040/ec59331ae5eeef143046760dd4eb819f.jpeg",
+    "websitePrice": 99.99,
+    "storePrice": 129.99
+  },
+  {
+    "id": 54,
+    "name": "Tênis Asics Gel-Kayano",
+    "description": "Tênis de corrida com excelente amortecimento e estabilidade",
+    "category": "Esportes",
+    "srcImg": "https://teniscorrida.com.br/app/media/images_product/big/174146700/174146700102601-tenis-asics-gel-kayano-29-preto-all-black-masculino-3.JPG",
+    "websitePrice": 699.99,
+    "storePrice": 749.99
+  },
+  {
+    "id": 55,
+    "name": "Mouse Gamer Logitech G502",
+    "description": "Mouse gamer com 11 botões programáveis e sensor de alta precisão",
+    "category": "Informática",
+    "srcImg": "https://static.myshop.cl/12446/1_1680291158000.jpg",
+    "websitePrice": 299.99,
+    "storePrice": 349.99
   }
 ]
