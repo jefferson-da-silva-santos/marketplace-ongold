@@ -5,7 +5,7 @@ import LogoLogin from "../LogoLogin";
 import GroupInput from "../GroupInput";
 import users from '../../data/users.json';
 
-const LoginForm = ({ login, changeMessage }) => {
+const LoginForm = ({ login, changeMessage, setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,6 +15,8 @@ const LoginForm = ({ login, changeMessage }) => {
     if (validateDateUsers(email, password)) {
       if (searchUser(email, password)) {
         changeMessage('Login realizado', 'rgb(115, 187, 115)');
+        const username = getNameUserPerEmail(email);
+        setUser(username);
         login();
       } else {
         changeMessage('O usuário não existe!', 'rgb(255, 96, 96)');
@@ -23,6 +25,10 @@ const LoginForm = ({ login, changeMessage }) => {
       changeMessage('Passe um email e uma senha válidos!', 'rgb(255, 96, 96)');
     }
   };
+
+  const getNameUserPerEmail = (email: string) => {
+    return users.find(user => user.email === email)?.name;
+  }
 
   // Função que faz a validação dos dados passados pelo usuário
   const validateDateUsers = (email: string, password: string) => {

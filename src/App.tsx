@@ -13,6 +13,7 @@ const stages = [
 const App = () => {
   const [stage, setStage] = useState(stages[0].name);
   const [message, setMessage] = useState("");
+  const [user, setUser] = useState('Username');
 
   const login = () => {
     setStage(stages[1].name);
@@ -53,8 +54,8 @@ const App = () => {
       >
         <p className="message__txt">{message}</p>
       </div>
-      {stage === "login" && <LoginForm login={login} changeMessage={changeMessage}/>}
-      {stage === "home" && <HomePage payment={payment} />}
+      {stage === "login" && <LoginForm setUser={setUser} login={login} changeMessage={changeMessage}/>}
+      {stage === "home" && <HomePage user={user} payment={payment} />}
       {stage === "payment" && <PaymentPage restart={restart} />}
     </div>
   );

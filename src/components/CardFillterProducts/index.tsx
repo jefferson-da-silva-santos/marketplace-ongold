@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const CardFillterProducts = ({ arrCategory, filterArrProducts, setProducts, productsArr }) => {
-  const [currentCateory, setCurrentCategory] = useState(
+const CardFillterProducts = ({ arrCategory, filterArrProducts, setProducts, productsArr, currentPage, searchProducts }) => {
+
+  const [currentCategory, setCurrentCategory] = useState(
     "Todas as categorias de produtos"
   );
 
+  useEffect(()=> {
+    searchProducts(currentCategory)
+  }, [currentPage])
   return (
     <div className="card-fillter-products">
       <span className="currentFilter">
-        {currentCateory}
+        {currentCategory}
       </span>
       <select
         onChange={(e) => {
@@ -17,8 +21,9 @@ const CardFillterProducts = ({ arrCategory, filterArrProducts, setProducts, prod
             setProducts(productsArr);
           } else {
             setCurrentCategory(`Itens da categoria ${e.target.value}`);
-            setProducts(filterArrProducts(e.target.value))
+            setProducts(filterArrProducts(e.target.value));
           }
+          currentPage(0);
         }}
         className="selectCategory"
         name=""

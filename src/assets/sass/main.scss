@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import "bootstrap-icons/font/bootstrap-icons.css";
-@import url('https://fonts.googleapis.com/css2?family=Doppio+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Doppio+One&display=swap");
 
 $font-secundary: "Doppio One", serif;
 
@@ -25,6 +25,12 @@ $font-secundary: "Doppio One", serif;
   grid-template-rows: $gtr;
   column-gap: $cg;
   row-gap: $rg;
+}
+
+@mixin media-query($mx) {
+  @media screen and (max-width: $mx) {
+    @content;
+  }
 }
 
 .App {
@@ -221,9 +227,9 @@ $font-secundary: "Doppio One", serif;
           border-radius: 10px;
           width: 35em;
           outline: none;
-          font-size: .9rem;
+          font-size: 0.9rem;
           margin-left: 1rem;
-          transition: all .4s ease;
+          transition: all 0.4s ease;
           &:focus {
             padding-left: 1.5em;
           }
@@ -235,6 +241,7 @@ $font-secundary: "Doppio One", serif;
 
 main {
   padding: 0 2rem 2em 2rem;
+  height: 75em;
 }
 
 .banner-home {
@@ -289,7 +296,7 @@ main {
   &__image {
     width: 8rem;
     height: 7em;
-    border-radius: 10px
+    border-radius: 10px;
   }
 
   &__info {
@@ -310,7 +317,7 @@ main {
   }
 
   .preces-group {
-    @include flex-box(row, center, center, .8rem);
+    @include flex-box(row, center, center, 0.8rem);
   }
 
   &__website-price {
@@ -320,7 +327,7 @@ main {
     font-weight: 600;
     font-size: 1.3rem;
   }
-  
+
   &__store-price {
     color: #979797;
     text-decoration: line-through;
@@ -380,7 +387,7 @@ main {
 }
 
 .group-pagination {
-  @include flex-box(row, center, center, .5rem);
+  @include flex-box(row, center, center, 0.5rem);
 
   .btn-pagination {
     @include flex-box(row, center, center, 1rem);
@@ -390,6 +397,183 @@ main {
     border: 1px solid black;
     background-color: transparent;
     cursor: pointer;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
+  }
+}
+
+@include media-query(615px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 23em;
+  }
+}
+
+@include media-query(623px) {
+  .card-product__info {
+    gap: 0;
+    font-size: 0.8em;
+  }
+  .card-product {
+    // height: 10em;
+  }
+}
+
+@include media-query(521px) {
+  .card-product__title {
+    font-size: 1rem;
+  }
+}
+
+@include media-query(486px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 20em;
+  }
+  .container-home__nav__primary .menu-icons {
+    gap: 13px;
+  }
+  .container-home__nav__primary .menu {
+    gap: 6px;
+  }
+  .container-home__nav__primary .menu-icons .username {
+    font-size: 0.85em;
+  }
+  .container-home__nav__primary .menu-icons .card-user__img {
+    width: 25px;
+    height: 25px;
+    i {
+      font-size: 13px;
+    }
+  }
+}
+
+@include media-query(487px) {
+  .card-product__title {
+    font-size: 0.9rem;
+  }
+
+  .card-product__website-price {
+    font-size: 1rem;
+  }
+  .card-product__store-price {
+    font-size: 1em;
+  }
+  .card-product {
+    column-gap: 0;
+    padding-right: 1rem;
+  }
+  .card-product__btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card-product__btn i {
+    font-size: 1.15em;
+  }
+  .card-product .preces-group {
+    gap: 6px;
+  }
+}
+
+@include media-query(452px) {
+  main {
+    height: 70em;
+}
+  .card-product {
+    height: 8em;
+  }
+  .currentFilter,
+  .selectCategory {
+    font-size: 0.8em;
+  }
+  .card-fillter-products {
+    padding: 0 0 1rem 0;
+  }
+  .banner-home {
+    margin-bottom: 1rem;
+  }
+  .group-input__input {
+    width: 18em;
+  }
+  .container-home__nav__primary .menu i {
+    font-size: 1.8rem;
+  }
+  .container-home__nav__primary .menu .menu__text {
+    font-size: 1em;
+  }
+  .icon-cart,
+  .icon-bell {
+    font-size: 0.9em;
+  }
+  .container-home__nav__primary .menu-icons {
+    gap: 10px;
+  }
+  .card-product__title {
+    font-size: 1em;
+  }
+  .card-product__description {
+    font-size: 0.78em;
+  }
+  .card-product__image {
+    width: 6em;
+    height: 6em;
+  }
+  .card-product {
+    grid-template-columns: 8em 1fr;
+  }
+  .group-pagination .btn-pagination {
+    width: 20px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    height: 20px;
+  }
+}
+
+@include media-query(400px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 16em;
+  }
+  .container-home__nav__primary .menu-icons i {
+    font-size: 1.2em;
+  }
+  .container-home__nav__primary .menu-icons .card-user {
+    gap: 3px;
+    padding: 4px 8px 4px 6px;
+  }
+  .container-home__nav__primary .menu-icons .username {
+    font-size: 0.8em;
+  }
+  .container-home__nav__primary .menu .menu__text {
+    font-size: 0.9em;
+  }
+  .container-home__nav__primary .menu i {
+    font-size: 1.5rem;
+  }
+}
+
+@include media-query(380px) {
+  .card-product__website-price {
+    font-size: 0.8rem;
+    
+  }
+  .group-input__input {
+    width: 16em;
+}
+  .card-product__store-price {
+    font-size: 0.8em;
+  }
+  .container-home__nav__secundary .group-search .search {
+    width: 14em;
+  }
+}
+
+@include media-query(345px) {
+  .container-home__nav__primary .menu-icons .card-user__img {
+    width: 20px;
+    height: 20px;
+  }
+  .container-home__nav__primary .menu-icons .username {
+    font-size: 0.7em;
+  }
+  main {
+    padding: 0 1rem 2em 1rem;
   }
 }

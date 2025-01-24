@@ -7,7 +7,7 @@ import productsArr from "../../data/products.json";
 import CardFillterProducts from "../CardFillterProducts";
 import FooterHome from "../FooterHome";
 
-const HomePage = ({ payment }) => {
+const HomePage = ({ payment, user }) => {
   const [products, setProducts] = useState(productsArr);
   const [itensPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(0);
@@ -30,13 +30,19 @@ const HomePage = ({ payment }) => {
     }
   }
 
+  const searchProducts = (textSarch) => {
+    return products.filter((product) => {
+      return product.name.toLowerCase().includes(textSarch.toLowerCase());
+    });
+  }
+
   useEffect(() => {
     handleImgBanner();
     const interval = setInterval(handleImgBanner, 60000); // Atualiza a cada 1 minuto
     return () => clearInterval(interval);
   }, []);
 
-  const filterArrProducts = (filter) => {
+  const filterArrProducts = (filter: string) => {
     return productsArr.filter((product) => product.category === filter);
   };
 
@@ -76,7 +82,7 @@ const HomePage = ({ payment }) => {
               <a href="" className="card-user__img">
                 <i className="bi bi-person-fill"></i>
               </a>
-              <span className="username">Username</span>
+              <span className="username">{user}</span>
             </div>
           </div>
         </div>
@@ -89,6 +95,19 @@ const HomePage = ({ payment }) => {
               type="text"
               placeholder="Buscar produto..."
               className="search"
+              onChange={(e) => {
+                const searchValue = (e.target as HTMLInputElement).value;
+                if (searchValue === "") {
+                  // Retorna todos os produtos quando o campo está vazio
+                  setProducts(productsArr);
+                } else {
+                  // Aplica o filtro usando o array original
+                  const filteredProducts = productsArr.filter((product) =>
+                    product.name.toLowerCase().includes(searchValue.toLowerCase())
+                  );
+                  setProducts(filteredProducts);
+                }
+              }}
             />
             <a href="" className="btn-filter">
               <i className="bi bi-three-dots-vertical"></i>
@@ -99,10 +118,12 @@ const HomePage = ({ payment }) => {
       <main>
         <BannerHome currentImgBanner={currentImgBanner} />
         <CardFillterProducts
+          currentPage={setCurrentPage}
           filterArrProducts={filterArrProducts}
           setProducts={setProducts}
           arrCategory={categories}
           productsArr={productsArr}
+          searchProducts={filterArrProducts}
         />
         <GroupProducts>
           {productsPage.map((item) => {
@@ -122,10 +143,9 @@ const HomePage = ({ payment }) => {
             Array.from(Array(totPage), (e, i) => {
               return (
                 <button 
-                style={i === currentPage ? {transform: "scale(120%)"} : {}}
+                style={i === currentPage ? {transform: "scale(130%)"} : {}}
                 value={i} onClick={(e) => {
                   setCurrentPage(Number((e.target as HTMLButtonElement).value));
-                  console.log((e.target as HTMLButtonElement).value);
                   
                 }} className="btn-pagination" key={i}>{i + 1}</button>
               )
@@ -133,7 +153,7 @@ const HomePage = ({ payment }) => {
           }
           </div>
         </GroupProducts>
-      </main>
+      </main> 
       <FooterHome />
     </Container>
   );

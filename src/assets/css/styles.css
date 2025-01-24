@@ -241,6 +241,7 @@
 
 main {
   padding: 0 2rem 2em 2rem;
+  height: 75em;
 }
 
 .banner-home {
@@ -427,6 +428,169 @@ main {
   background-color: transparent;
   cursor: pointer;
   transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 615px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 23em;
+  }
+}
+@media screen and (max-width: 623px) {
+  .card-product__info {
+    gap: 0;
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 521px) {
+  .card-product__title {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 486px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 20em;
+  }
+  .container-home__nav__primary .menu-icons {
+    gap: 13px;
+  }
+  .container-home__nav__primary .menu {
+    gap: 6px;
+  }
+  .container-home__nav__primary .menu-icons .username {
+    font-size: 0.85em;
+  }
+  .container-home__nav__primary .menu-icons .card-user__img {
+    width: 25px;
+    height: 25px;
+  }
+  .container-home__nav__primary .menu-icons .card-user__img i {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 487px) {
+  .card-product__title {
+    font-size: 0.9rem;
+  }
+  .card-product__website-price {
+    font-size: 1rem;
+  }
+  .card-product__store-price {
+    font-size: 1em;
+  }
+  .card-product {
+    column-gap: 0;
+    padding-right: 1rem;
+  }
+  .card-product__btn {
+    width: 30px;
+    height: 30px;
+  }
+  .card-product__btn i {
+    font-size: 1.15em;
+  }
+  .card-product .preces-group {
+    gap: 6px;
+  }
+}
+@media screen and (max-width: 452px) {
+  main {
+    height: 70em;
+  }
+  .card-product {
+    height: 8em;
+  }
+  .currentFilter,
+  .selectCategory {
+    font-size: 0.8em;
+  }
+  .card-fillter-products {
+    padding: 0 0 1rem 0;
+  }
+  .banner-home {
+    margin-bottom: 1rem;
+  }
+  .group-input__input {
+    width: 18em;
+  }
+  .container-home__nav__primary .menu i {
+    font-size: 1.8rem;
+  }
+  .container-home__nav__primary .menu .menu__text {
+    font-size: 1em;
+  }
+  .icon-cart,
+  .icon-bell {
+    font-size: 0.9em;
+  }
+  .container-home__nav__primary .menu-icons {
+    gap: 10px;
+  }
+  .card-product__title {
+    font-size: 1em;
+  }
+  .card-product__description {
+    font-size: 0.78em;
+  }
+  .card-product__image {
+    width: 6em;
+    height: 6em;
+  }
+  .card-product {
+    grid-template-columns: 8em 1fr;
+  }
+  .group-pagination .btn-pagination {
+    width: 20px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 16em;
+  }
+  .container-home__nav__primary .menu-icons i {
+    font-size: 1.2em;
+  }
+  .container-home__nav__primary .menu-icons .card-user {
+    gap: 3px;
+    padding: 4px 8px 4px 6px;
+  }
+  .container-home__nav__primary .menu-icons .username {
+    font-size: 0.8em;
+  }
+  .container-home__nav__primary .menu .menu__text {
+    font-size: 0.9em;
+  }
+  .container-home__nav__primary .menu i {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .card-product__website-price {
+    font-size: 0.8rem;
+  }
+  .group-input__input {
+    width: 16em;
+  }
+  .card-product__store-price {
+    font-size: 0.8em;
+  }
+  .container-home__nav__secundary .group-search .search {
+    width: 14em;
+  }
+}
+@media screen and (max-width: 345px) {
+  .container-home__nav__primary .menu-icons .card-user__img {
+    width: 20px;
+    height: 20px;
+  }
+  .container-home__nav__primary .menu-icons .username {
+    font-size: 0.7em;
+  }
+  main {
+    padding: 0 1rem 2em 1rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
