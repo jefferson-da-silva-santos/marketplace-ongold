@@ -4,7 +4,8 @@ import HeaderPayment from "../HeaderPayment";
 import CardItensPayment from "../CardItensPayment";
 import products from "../../data/products.json";
 import ProductCart from "../ProductCart";
-
+import FooterHome from "../FooterHome";
+import CardTotPayment from "../CardTotPayment";
 const PaymentPage = ({ restart }) => {
   console.log(products);
   const [productsCart, setProductsCart] = useState(products);
@@ -21,6 +22,7 @@ const PaymentPage = ({ restart }) => {
             );
           })}
         </CardItensPayment>
+        <CardTotPayment />
       </main>
       <button onClick={restart}>Sair</button>
     </Container>

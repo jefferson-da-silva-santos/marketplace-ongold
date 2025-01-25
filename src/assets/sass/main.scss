@@ -582,7 +582,7 @@ $font-secundary: "Doppio One", serif;
 .container-payment {
   background-color: #f1f4f9;
   min-height: 100vh;
-
+  padding-bottom: 2rem;
   .header-payment {
     @include flex-box(row, space-between, center, 0);
     padding: 2rem 2em;
@@ -619,7 +619,7 @@ $font-secundary: "Doppio One", serif;
 .main-payment {
   padding: 0 2rem;
   margin-top: 3rem;
-  @include flex-box(row, center, center, 0);
+  @include flex-box(row, center, flex-start, 2rem);
 
   .card-itens-payment {
     background-color: white;
@@ -656,6 +656,29 @@ $font-secundary: "Doppio One", serif;
     &__content {
       @include flex-box(column, start, baseline, 0rem);
       padding-bottom: 1.5rem;
+      overflow-y: scroll;
+      height: 23em;
+
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #ffffff; /* Cor do trilho da barra */
+      }
+
+      /* Estiliza o polegar da barra */
+  &::-webkit-scrollbar-thumb {
+    background: #ccc; /* Cor do polegar */
+    border-radius: 5px;
+    height: 2rem; /* Deixa as bordas arredondadas */
+  }
+
+  /* Efeito de hover no polegar */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor mais escura ao passar o mouse */
+  }
+
       &__product {
         width: 100%;
         padding: 1.5rem;
@@ -702,6 +725,48 @@ $font-secundary: "Doppio One", serif;
           }
         }
       }
+    }
+  }
+}
+
+.group-card-tot-payment {
+  @include flex-box(column, space-between, center, 1rem);
+
+  .card-tot-payment {
+    @include flex-box(column, center, center, 0);
+    background-color: white;
+    padding: 1rem 2rem;
+    width: 25em;
+    box-shadow: 0px 0px 8px darken(#f1f4f9, 5%);
+    border-radius: 5px;
+    
+
+    &__header,
+    &__itens,
+    &__freight,
+    &__total {
+      @include flex-box(row, space-between, center, 0);
+      width: 100%;
+      padding: 1rem 0;
+    }
+
+    &__header {
+      &__title {
+        font-weight: 600;
+        font-size: 1.1em;
+      }
+    }
+
+    &__btn {
+      background-color: #e02034;
+      border: none;
+      padding: 1rem 0;
+      box-shadow: 0px 0px 8px darken(#f1f4f9, 10%);
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
     }
   }
 }
