@@ -12,7 +12,8 @@
     "compile:sass": "sass src/assets/sass/main.scss src/assets/css/styles.comp.css",
     "prefix:css": "postcss src/assets/css/styles.comp.css --use autoprefixer --output src/assets/css/styles.prefix.css",
     "compress:css": "postcss src/assets/css/styles.prefix.css --use cssnano --output src/assets/css/styles.css",
-    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+    "build:css": "npm-run-all compile:sass prefix:css compress:css",
+    "git:all": "git add . && git commit -a -m 'Update' && git push origin main"
   },
   "dependencies": {
     "bootstrap-icons": "^1.11.3",
