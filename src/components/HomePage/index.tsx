@@ -114,7 +114,7 @@ const HomePage = ({ payment, user }) => {
           </div>
         </div>
       </nav>
-      <main>
+      <main className="container-home__main">
         <BannerHome currentImgBanner={currentImgBanner} />
         <CardFillterProducts
           currentPage={setCurrentPage}

@@ -239,7 +239,7 @@
   padding-left: 1.5em;
 }
 
-main {
+.container-home__main {
   padding: 0 2rem 2em 2rem;
   height: 75em;
 }
@@ -260,13 +260,13 @@ main {
 
 @keyframes imgBanner {
   0% {
-    background-position: center 0%;
+    background-position: 0% 0%;
   }
   50% {
-    background-position: center 100%;
+    background-position: 100% 100%;
   }
   100% {
-    background-position: center 0%;
+    background-position: 0% 0%;
   }
 }
 .group-products {
@@ -591,6 +591,164 @@ main {
   main {
     padding: 0 1rem 2em 1rem;
   }
+}
+.container-payment {
+  background-color: #f1f4f9;
+  min-height: 100vh;
+}
+.container-payment .header-payment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  padding: 2rem 2em;
+  box-shadow: 0px 0px 8px rgb(223.15, 229.975, 241.35);
+  height: 7em;
+  background-color: white;
+}
+.container-payment .header-payment__title {
+  text-transform: uppercase;
+  color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.container-payment .header-payment__title img {
+  width: 2.5rem;
+  margin-left: 10px;
+}
+.container-payment .header-payment__title span {
+  font-weight: 400;
+}
+.container-payment .header-payment .button-andrees {
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: #e02034;
+  box-shadow: 0px 0px 8px #cccccc;
+  cursor: pointer;
+}
+
+.main-payment {
+  padding: 0 2rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.main-payment .card-itens-payment {
+  background-color: white;
+  box-shadow: 0px 0px 8px rgb(223.15, 229.975, 241.35);
+  width: 100%;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5em 2.3em 1fr;
+  column-gap: 0;
+  row-gap: 0;
+}
+.main-payment .card-itens-payment__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0;
+  padding: 0 2rem;
+}
+.main-payment .card-itens-payment__header__title {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+.main-payment .card-itens-payment__header__title span {
+  color: #979797;
+  font-weight: 500;
+}
+.main-payment .card-itens-payment__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  background-color: #f7f7f7;
+  padding: 0 2rem;
+}
+.main-payment .card-itens-payment__info__text {
+  text-transform: uppercase;
+  color: #979797;
+  font-size: 0.9em;
+}
+.main-payment .card-itens-payment__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: baseline;
+  gap: 0rem;
+  padding-bottom: 1.5rem;
+}
+.main-payment .card-itens-payment__content__product {
+  width: 100%;
+  padding: 1.5rem;
+  padding-bottom: 1em;
+  display: grid;
+  grid-template-columns: 6em 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 1em;
+  row-gap: 0;
+}
+.main-payment .card-itens-payment__content__product__img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.main-payment .card-itens-payment__content__product__img__img {
+  width: 6em;
+  height: 5em;
+  border-radius: 10px;
+}
+.main-payment .card-itens-payment__content__product__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0;
+  width: 100%;
+}
+.main-payment .card-itens-payment__content__product__info__title {
+  font-weight: 600;
+  font-size: 1em;
+}
+.main-payment .card-itens-payment__content__product__info__desc {
+  color: #acaaaa;
+  font-size: 0.9em;
+}
+.main-payment .card-itens-payment__content__product__info .group-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+.main-payment .card-itens-payment__content__product__info .group-price__btn-rm {
+  border: none;
+  background-color: transparent;
+  font-size: 0.9em;
+  color: #aa0011;
+  font-weight: 600;
+  cursor: pointer;
+}
+.main-payment .card-itens-payment__content__product__info .group-price__price {
+  font-size: 1.1em;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=styles.css.map */

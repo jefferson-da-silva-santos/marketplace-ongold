@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import Container from "../Container";
+import HeaderPayment from "../HeaderPayment";
+import CardItensPayment from "../CardItensPayment";
+import products from "../../data/products.json";
+import ProductCart from "../ProductCart";
 
-const PaymentPage = ({restart}) => {
+const PaymentPage = ({ restart }) => {
+  console.log(products);
+  const [productsCart, setProductsCart] = useState(products);
+  console.log(productsCart);
+
   return (
-    <div>
-      <h1>Payment Page</h1>
+    <Container className={"container-payment"}>
+      <HeaderPayment />
+      <main className="main-payment">
+        <CardItensPayment>
+          {productsCart.map((product) => {
+            return (
+              <ProductCart key={product.id} product={product} />
+            );
+          })}
+        </CardItensPayment>
+      </main>
       <button onClick={restart}>Sair</button>
-    </div>
-  )
-}
+    </Container>
+  );
+};
 
 export default PaymentPage;
