@@ -1,6 +1,14 @@
 import React from "react";
 
-const ProductCart = ({product}) => {
+const ProductCart = ({product, productsCart, setProductsCart, changeMessage}) => {
+
+   const removeProductCart = (e) => {
+    e.preventDefault();
+    const newProducts = productsCart.filter((productCart) => productCart.id !== product.id);
+    setProductsCart(newProducts);
+    changeMessage("Produto removido do carrinho", "rgb(187, 115, 115)");
+   }
+
   return (
     <div key={product.id} className="card-itens-payment__content__product">
     <div className="card-itens-payment__content__product__img">
@@ -19,8 +27,8 @@ const ProductCart = ({product}) => {
         </p>
       </div>
       <div className="group-price">
-        <button className="group-price__btn-rm">Remover</button>
-        <p className="group-price__price">{product.websitePrice}</p>
+        <button className="group-price__btn-rm" onClick={removeProductCart}>Remover</button>
+        <p className="group-price__price">R$ {product.websitePrice}</p>
       </div>
     </div>
   </div>

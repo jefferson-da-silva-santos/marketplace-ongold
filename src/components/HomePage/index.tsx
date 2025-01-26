@@ -7,7 +7,7 @@ import productsArr from "../../data/products.json";
 import CardFillterProducts from "../CardFillterProducts";
 import FooterHome from "../FooterHome";
 
-const HomePage = ({ payment, user }) => {
+const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart }) => {
   const [products, setProducts] = useState(productsArr);
   const [itensPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(0);
@@ -55,6 +55,7 @@ const HomePage = ({ payment, user }) => {
 
   return (
     <Container className={"container-home"}>
+      <button className="btn-cart-1"><span className="quant-cart">{productsCart.length}</span><i className="bi bi-cart-fill"></i></button>
       <nav className="container-home__nav">
         <div className="container-home__nav__primary">
           <div className="menu">
@@ -129,11 +130,15 @@ const HomePage = ({ payment, user }) => {
             return (
               <CardProduct
                 key={item.id}
+                products={products}
+                id={item.id}
                 title={item.name}
                 imgSrc={item.srcImg}
                 description={item.description}
                 webSitePrice={item.websitePrice}
                 storePrice={item.storePrice}
+                setProductsCart={setProductsCart}
+                changeMessage={changeMessage}
               ></CardProduct>
             );
           })}

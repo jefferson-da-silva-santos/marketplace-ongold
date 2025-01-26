@@ -4,27 +4,37 @@ import HeaderPayment from "../HeaderPayment";
 import CardItensPayment from "../CardItensPayment";
 import products from "../../data/products.json";
 import ProductCart from "../ProductCart";
-import FooterHome from "../FooterHome";
 import CardTotPayment from "../CardTotPayment";
-const PaymentPage = ({ restart }) => {
-  console.log(products);
-  const [productsCart, setProductsCart] = useState(products);
-  console.log(productsCart);
-
+const PaymentPage = ({ setStage, productsCart, setProductsCart, changeMessage }) => {
   return (
     <Container className={"container-payment"}>
       <HeaderPayment />
       <main className="main-payment">
-        <CardItensPayment>
-          {productsCart.map((product) => {
-            return (
-              <ProductCart key={product.id} product={product} />
-            );
-          })}
-        </CardItensPayment>
-        <CardTotPayment />
+        {productsCart.length === 0 && (
+          <div className="empty-cart">
+            <p className="empty-cart__text">* Seu carrinho está vazio</p>
+            <button onClick={() => {
+              setStage("home");
+            }} className="empty-cart__btn">Voltar para a loja</button>
+            <p className="empty-cart__text">*</p>
+          </div>
+        )}
+        {productsCart.length > 0 && (
+          <>
+            <CardItensPayment>
+              {productsCart.map((product) => {
+                return <ProductCart key={product.id} product={product} productsCart={productsCart} setProductsCart={setProductsCart} changeMessage={changeMessage}/>;
+              })}
+            </CardItensPayment>
+            <CardTotPayment productsCart={productsCart}/>
+          </>
+        )}
       </main>
-      <button onClick={restart}>Sair</button>
+      <button onClick={() => {
+        setStage("home");
+      }} className="button-cart-home">
+      <i className="bi bi-house-door-fill"></i>
+      </button>
     </Container>
   );
 };
