@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCart = ({product, productsCart, setProductsCart, changeMessage}) => {
+const ProductCart = ({formatCurrencyBRL, product, productsCart, setProductsCart, changeMessage}) => {
 
    const removeProductCart = (e) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ const ProductCart = ({product, productsCart, setProductsCart, changeMessage}) =>
     <div className="card-itens-payment__content__product__info">
       <div>
         <h3 className="card-itens-payment__content__product__info__title">
-          {product.name}
+          {product.name} - ({product.quantity} X)
         </h3>
         <p className="card-itens-payment__content__product__info__desc">
           {product.description}
@@ -28,7 +28,7 @@ const ProductCart = ({product, productsCart, setProductsCart, changeMessage}) =>
       </div>
       <div className="group-price">
         <button className="group-price__btn-rm" onClick={removeProductCart}>Remover</button>
-        <p className="group-price__price">R$ {product.websitePrice}</p>
+        <p className="group-price__price">R$ {formatCurrencyBRL(Number(Number(product.websitePrice).toFixed(2)))}</p>
       </div>
     </div>
   </div>

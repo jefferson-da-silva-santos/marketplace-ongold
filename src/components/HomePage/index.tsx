@@ -7,7 +7,7 @@ import productsArr from "../../data/products.json";
 import CardFillterProducts from "../CardFillterProducts";
 import FooterHome from "../FooterHome";
 
-const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart }) => {
+const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart, setStage, formatCurrencyBRL }) => {
   const [products, setProducts] = useState(productsArr);
   const [itensPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(0);
@@ -30,12 +30,6 @@ const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart 
     }
   }
 
-  const searchProducts = (textSarch) => {
-    return products.filter((product) => {
-      return product.name.toLowerCase().includes(textSarch.toLowerCase());
-    });
-  }
-
   useEffect(() => {
     handleImgBanner();
     const interval = setInterval(handleImgBanner, 60000); // Atualiza a cada 1 minuto
@@ -46,16 +40,32 @@ const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart 
     return productsArr.filter((product) => product.category === filter);
   };
 
-  const filterCategories = (arr) => {
+  const filterCategories = (arr: any) => {
     const arrCtg = Array.from(new Set(arr.map((item) => item.category)));
     arrCtg.unshift("Todas");
     return arrCtg;
   };
+
+  const handleSearchProducts = (e: any) => {
+    const searchValue = (e.target as HTMLInputElement).value;
+    if (searchValue === "") {
+      setProducts(productsArr);
+    } else {
+      const filteredProducts = productsArr.filter((product) =>
+        product.name.toLowerCase().includes(searchValue.toLowerCase())
+      );
+      setProducts(filteredProducts);
+    }
+    setCurrentPage(0);
+  };
+
   const [categories, setCategories] = useState(filterCategories(productsArr));
 
   return (
     <Container className={"container-home"}>
-      <button className="btn-cart-1"><span className="quant-cart">{productsCart.length}</span><i className="bi bi-cart-fill"></i></button>
+      <button className="btn-cart-1" onClick={() => {
+        setStage("payment");
+      }}><span className="quant-cart">{productsCart.length}</span><i className="bi bi-cart-fill"></i></button>
       <nav className="container-home__nav">
         <div className="container-home__nav__primary">
           <div className="menu">
@@ -96,18 +106,7 @@ const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart 
               type="text"
               placeholder="Buscar produto..."
               className="search"
-              onChange={(e) => {
-                const searchValue = (e.target as HTMLInputElement).value;
-                if (searchValue === "") {
-                  setProducts(productsArr);
-                } else {
-                  const filteredProducts = productsArr.filter((product) =>
-                    product.name.toLowerCase().includes(searchValue.toLowerCase())
-                  );
-                  setProducts(filteredProducts);
-                }
-                setCurrentPage(0);
-              }}
+              onChange={handleSearchProducts}
             />
             <a href="" className="btn-filter">
               <i className="bi bi-three-dots-vertical"></i>
@@ -131,6 +130,7 @@ const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart 
               <CardProduct
                 key={item.id}
                 products={products}
+                formatCurrencyBRL={formatCurrencyBRL}
                 id={item.id}
                 title={item.name}
                 imgSrc={item.srcImg}
@@ -139,6 +139,7 @@ const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart 
                 storePrice={item.storePrice}
                 setProductsCart={setProductsCart}
                 changeMessage={changeMessage}
+                productsCart={productsCart}
               ></CardProduct>
             );
           })}

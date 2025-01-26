@@ -10,6 +10,13 @@ const stages = [
   { id: 3, name: "payment" },
 ];
 
+function formatCurrencyBRL(value) {
+  return value.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  });
+}
+
 const App = () => {
   const [stage, setStage] = useState(stages[0].name);
   const [message, setMessage] = useState("");
@@ -56,8 +63,8 @@ const App = () => {
         <p className="message__txt">{message}</p>
       </div>
       {stage === "login" && <LoginForm setUser={setUser} login={login} changeMessage={changeMessage}/>}
-      {stage === "home" && <HomePage changeMessage={changeMessage} productsCart={productsCart} setProductsCart={setProductsCart} user={user} payment={payment} />}
-      {stage === "payment" && <PaymentPage productsCart={productsCart} setProductsCart={setProductsCart} setStage={setStage} changeMessage={changeMessage}/>}
+      {stage === "home" && <HomePage formatCurrencyBRL={formatCurrencyBRL} changeMessage={changeMessage} productsCart={productsCart} setProductsCart={setProductsCart} user={user} payment={payment} setStage={setStage}/>}
+      {stage === "payment" && <PaymentPage formatCurrencyBRL={formatCurrencyBRL} productsCart={productsCart} setProductsCart={setProductsCart} setStage={setStage} changeMessage={changeMessage}/>}
     </div>
   );
 };

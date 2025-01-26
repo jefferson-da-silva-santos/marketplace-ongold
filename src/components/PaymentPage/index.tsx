@@ -5,7 +5,7 @@ import CardItensPayment from "../CardItensPayment";
 import products from "../../data/products.json";
 import ProductCart from "../ProductCart";
 import CardTotPayment from "../CardTotPayment";
-const PaymentPage = ({ setStage, productsCart, setProductsCart, changeMessage }) => {
+const PaymentPage = ({ setStage, productsCart, setProductsCart, changeMessage, formatCurrencyBRL }) => {
   return (
     <Container className={"container-payment"}>
       <HeaderPayment />
@@ -21,12 +21,12 @@ const PaymentPage = ({ setStage, productsCart, setProductsCart, changeMessage })
         )}
         {productsCart.length > 0 && (
           <>
-            <CardItensPayment>
+            <CardItensPayment  productsCart={productsCart}>
               {productsCart.map((product) => {
-                return <ProductCart key={product.id} product={product} productsCart={productsCart} setProductsCart={setProductsCart} changeMessage={changeMessage}/>;
+                return <ProductCart formatCurrencyBRL={formatCurrencyBRL} key={product.id} product={product} productsCart={productsCart} setProductsCart={setProductsCart} changeMessage={changeMessage}/>;
               })}
             </CardItensPayment>
-            <CardTotPayment productsCart={productsCart}/>
+            <CardTotPayment formatCurrencyBRL={formatCurrencyBRL} productsCart={productsCart}/>
           </>
         )}
       </main>
