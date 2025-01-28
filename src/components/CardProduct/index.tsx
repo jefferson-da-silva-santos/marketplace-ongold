@@ -33,7 +33,7 @@ const CardProduct = ({
             const product = products.find((product) => product.id === id);
 
             if (!product) {
-              changeMessage("Produto não encontrado", "rgb(255, 0, 0)");
+              changeMessage("Produto não encontrado", "rgb(255, 63, 63)");
               return;
             }
 

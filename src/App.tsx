@@ -37,7 +37,7 @@ const App = () => {
   // Função para os recursos que ainda estão em construção
   const handleNotFound = (e) => {
     e.preventDefault();
-    changeMessage('Recurso ainda em construção!',"rgb(255, 0, 0)");
+    changeMessage('Recurso ainda em construção!', "rgb(255, 63, 63)");
   }
 
   const [messageVisible, setMessageVisible] = useState(false);

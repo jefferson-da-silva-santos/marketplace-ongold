@@ -100,6 +100,7 @@
   font-weight: 500;
   font-size: 1em;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .form {
@@ -335,7 +336,7 @@
   gap: 0.8rem;
 }
 .card-product__website-price {
-  font-family: "Doppio One", serif;
+  font-family: "Doppio One", Helvetica, sans-serif;
   font-weight: 100;
   color: #ed383f;
   font-weight: 600;
@@ -415,6 +416,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 .group-pagination .btn-pagination {
   display: flex;
@@ -773,6 +775,15 @@
   left: 2.5em;
 }
 
+.container-not-found {
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
 @media screen and (max-width: 922px) {
   .group-card-tot-payment .card-tot-payment {
     width: 20em;

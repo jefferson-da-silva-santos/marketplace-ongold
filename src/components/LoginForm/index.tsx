@@ -14,15 +14,15 @@ const LoginForm = ({ login, changeMessage, setUser, handleNotFound }) => {
     e.preventDefault();
     if (validateDateUsers(email, password)) {
       if (searchUser(email, password)) {
-        changeMessage("Login realizado", "rgb(115, 187, 115)");
+        changeMessage("Login realizado!", "rgb(115, 187, 115)");
         const username = getNameUserPerEmail(email);
         setUser(username);
         login();
       } else {
-        changeMessage("O usuário não existe!", "rgb(255, 96, 96)");
+        changeMessage("O usuário não existe!", "rgb(255, 63, 63)");
       }
     } else {
-      changeMessage("Passe um email e uma senha válidos!", "rgb(255, 96, 96)");
+      changeMessage("Passe um email e uma senha válidos!", "rgb(255, 63, 63)");
     }
   };
 

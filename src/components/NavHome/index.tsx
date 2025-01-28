@@ -46,7 +46,7 @@ const NavHome = ({payment, user, handleSearchProducts, changeMessage, handleNotF
           />
           <a onClick={(e) => {
               e.preventDefault();
-              changeMessage('Recurso ainda em construção!',"rgb(255, 0, 0)");
+              changeMessage('Recurso ainda em construção!',"rrgb(255, 63, 63))");
             }} href="" className="btn-filter">
             <i className="bi bi-three-dots-vertical"></i>
           </a>
