@@ -3,7 +3,7 @@ import Container from "../Container";
 import CardLogin from "../CardLogin";
 import LogoLogin from "../LogoLogin";
 import GroupInput from "../GroupInput";
-import users from '../../data/users.json';
+import users from "../../data/users.json";
 
 const LoginForm = ({ login, changeMessage, setUser }) => {
   const [email, setEmail] = useState("");
@@ -14,37 +14,47 @@ const LoginForm = ({ login, changeMessage, setUser }) => {
     e.preventDefault();
     if (validateDateUsers(email, password)) {
       if (searchUser(email, password)) {
-        changeMessage('Login realizado', 'rgb(115, 187, 115)');
+        changeMessage("Login realizado", "rgb(115, 187, 115)");
         const username = getNameUserPerEmail(email);
         setUser(username);
         login();
       } else {
-        changeMessage('O usuário não existe!', 'rgb(255, 96, 96)');
-      } 
+        changeMessage("O usuário não existe!", "rgb(255, 96, 96)");
+      }
     } else {
-      changeMessage('Passe um email e uma senha válidos!', 'rgb(255, 96, 96)');
+      changeMessage("Passe um email e uma senha válidos!", "rgb(255, 96, 96)");
     }
   };
 
+  /*
+   Função responsável por retornar o nome do usuário através do email
+   Esse nome é enviado para a página Home
+   */
   const getNameUserPerEmail = (email: string) => {
-    return users.find(user => user.email === email)?.name;
-  }
+    return users.find((user) => user.email === email)?.name;
+  };
 
   // Função que faz a validação dos dados passados pelo usuário
   const validateDateUsers = (email: string, password: string) => {
-    if (typeof email !== 'string' || email.trim() === '' ) {
+    if (typeof email !== "string" || email.trim() === "") {
       return false;
     }
-    if (typeof password !== 'string' || password.trim() === '' || password.length < 6) {
+    if (
+      typeof password !== "string" ||
+      password.trim() === "" ||
+      password.length < 6
+    ) {
       return false;
     }
     return true;
-  }
+  };
 
   // Função que faz a a busca do email e senha no arquivo json de dados
   const searchUser = (emailUser: string, passwordUser: string) => {
-    return users.some(user => user.email === emailUser && user.password === passwordUser); 
-  }
+    return users.some(
+      (user) => user.email === emailUser && user.password === passwordUser
+    );
+  };
 
   // Função de alterar vizibilidade da senha
   const [showPassword, setShowPassword] = useState(false);

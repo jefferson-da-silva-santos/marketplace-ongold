@@ -2,6 +2,7 @@ import React from "react";
 
 const ProductCart = ({formatCurrencyBRL, product, productsCart, setProductsCart, changeMessage}) => {
 
+  // Função responsável por remover um item do carrinho de compras
    const removeProductCart = (e) => {
     e.preventDefault();
     const newProducts = productsCart.filter((productCart) => productCart.id !== product.id);

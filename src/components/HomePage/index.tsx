@@ -19,6 +19,7 @@ const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart,
 
   const [currentImgBanner, setCurrentImgBanner] = useState("");
 
+  // Função responsável por alternar entre as imagens do banner
   function handleImgBanner() {
     const currentMinute = new Date().getMinutes();
 
@@ -36,17 +37,26 @@ const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart,
     const interval = setInterval(handleImgBanner, 60000); // Atualiza a cada 1 minuto
     return () => clearInterval(interval);
   }, []);
-
+  
+  /*
+  Função responsável por filtrar o array de produtos com base na categoria
+  */
   const filterArrProducts = (filter: string) => {
     return productsArr.filter((product) => product.category === filter);
   };
 
+  /*
+  Função responsáavel por filtrar as categorias de produtos existentes
+  */
   const filterCategories = (arr: any) => {
     const arrCtg = Array.from(new Set(arr.map((item) => item.category)));
     arrCtg.unshift("Todas");
     return arrCtg;
   };
 
+  /*
+  Função responsável por manipular a busca de produtos a partir do seu nome
+  */
   const handleSearchProducts = (e: any) => {
     const searchValue = (e.target as HTMLInputElement).value;
     if (searchValue === "") {
@@ -60,7 +70,7 @@ const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart,
     setCurrentPage(0);
   };
 
-  const [categories, setCategories] = useState(filterCategories(productsArr));
+  const [categories] = useState(filterCategories(productsArr));
 
   return (
     <Container className={"container-home"}>

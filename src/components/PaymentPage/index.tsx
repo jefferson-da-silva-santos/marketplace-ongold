@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Container from "../Container";
 import HeaderPayment from "../HeaderPayment";
 import CardItensPayment from "../CardItensPayment";
-import products from "../../data/products.json";
 import ProductCart from "../ProductCart";
 import CardTotPayment from "../CardTotPayment";
 const PaymentPage = ({ setStage, productsCart, setProductsCart, changeMessage, formatCurrencyBRL }) => {

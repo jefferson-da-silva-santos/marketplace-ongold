@@ -8,7 +8,8 @@ const CardFillterProducts = ({ arrCategory, filterArrProducts, setProducts, prod
 
   useEffect(()=> {
     searchProducts(currentCategory)
-  }, [currentPage])
+  }, [currentPage]);
+  
   return (
     <div className="card-fillter-products">
       <span className="currentFilter">
