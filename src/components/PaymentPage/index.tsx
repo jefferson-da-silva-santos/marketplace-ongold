@@ -4,19 +4,15 @@ import HeaderPayment from "../HeaderPayment";
 import CardItensPayment from "../CardItensPayment";
 import ProductCart from "../ProductCart";
 import CardTotPayment from "../CardTotPayment";
-const PaymentPage = ({ setStage, productsCart, setProductsCart, changeMessage, formatCurrencyBRL }) => {
+import EmptyCart from "../EmptyCart";
+
+const PaymentPage = ({ handleNotFound, setStage, productsCart, setProductsCart, changeMessage, formatCurrencyBRL }) => {
   return (
     <Container className={"container-payment"}>
-      <HeaderPayment />
+      <HeaderPayment handleNotFound={handleNotFound}/>
       <main className="main-payment">
         {productsCart.length === 0 && (
-          <div className="empty-cart">
-            <p className="empty-cart__text">* Seu carrinho está vazio</p>
-            <button onClick={() => {
-              setStage("home");
-            }} className="empty-cart__btn">Voltar para a loja</button>
-            <p className="empty-cart__text">*</p>
-          </div>
+          <EmptyCart setStage={setStage}/>
         )}
         {productsCart.length > 0 && (
           <>
@@ -25,7 +21,7 @@ const PaymentPage = ({ setStage, productsCart, setProductsCart, changeMessage, f
                 return <ProductCart formatCurrencyBRL={formatCurrencyBRL} key={product.id} product={product} productsCart={productsCart} setProductsCart={setProductsCart} changeMessage={changeMessage}/>;
               })}
             </CardItensPayment>
-            <CardTotPayment formatCurrencyBRL={formatCurrencyBRL} productsCart={productsCart}/>
+            <CardTotPayment setProductsCart={setProductsCart} changeMessage={changeMessage} formatCurrencyBRL={formatCurrencyBRL} productsCart={productsCart}/>
           </>
         )}
       </main>

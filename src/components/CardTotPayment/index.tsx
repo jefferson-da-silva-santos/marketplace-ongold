@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardTotPayment = ({formatCurrencyBRL, productsCart}) => {
+const CardTotPayment = ({formatCurrencyBRL, productsCart, setProductsCart, changeMessage}) => {
 
   // Filtrando o valor total do carrinho
   const total = Number(productsCart.reduce((acc, product) => acc + product.websitePrice, 0).toFixed(2));
@@ -26,7 +26,12 @@ const CardTotPayment = ({formatCurrencyBRL, productsCart}) => {
           <p className="card-tot-payment__total__text">R$ {formatCurrencyBRL(Number(totalWithFreight))}</p>
         </div>
       </section>
-      <button className="card-tot-payment__btn">Finalizar compra</button>
+      <button onClick={
+        () => {
+          setProductsCart([]);
+          changeMessage('Seu pedido foi enviado!', 'rgb(115, 187, 115)');
+        }
+      } className="card-tot-payment__btn">Finalizar compra</button>
     </div>
   )
 }

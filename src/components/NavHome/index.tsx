@@ -1,10 +1,10 @@
 import React from "react";
 
-const NavHome = ({payment, user, handleSearchProducts}) => {
+const NavHome = ({payment, user, handleSearchProducts, changeMessage, handleNotFound}) => {
   return (
     <nav className="container-home__nav">
       <div className="container-home__nav__primary">
-        <div className="menu">
+        <div className="menu" onClick={handleNotFound}>
           <i className="bi bi-list"></i>
           <span className="menu__text">
             Compra<span className="menu__text2">Daqui</span>
@@ -12,7 +12,7 @@ const NavHome = ({payment, user, handleSearchProducts}) => {
         </div>
 
         <div className="menu-icons">
-          <a href="" className="icon-bell">
+          <a onClick={handleNotFound} href="" className="icon-bell">
             <i className="bi bi-bell-fill"></i>
           </a>
           <a
@@ -26,7 +26,7 @@ const NavHome = ({payment, user, handleSearchProducts}) => {
             <i className="bi bi-cart-fill"></i>
           </a>
           <div className="card-user">
-            <a href="" className="card-user__img">
+            <a onClick={handleNotFound} href="" className="card-user__img">
               <i className="bi bi-person-fill"></i>
             </a>
             <span className="username">{user}</span>
@@ -35,7 +35,7 @@ const NavHome = ({payment, user, handleSearchProducts}) => {
       </div>
       <div className="container-home__nav__secundary">
         <div className="group-search">
-          <a href="" className="btn-search">
+          <a onClick={handleNotFound} href="" className="btn-search">
             <i className="bi bi-search"></i>
           </a>
           <input
@@ -44,7 +44,10 @@ const NavHome = ({payment, user, handleSearchProducts}) => {
             className="search"
             onChange={handleSearchProducts}
           />
-          <a href="" className="btn-filter">
+          <a onClick={(e) => {
+              e.preventDefault();
+              changeMessage('Recurso ainda em construção!',"rgb(255, 0, 0)");
+            }} href="" className="btn-filter">
             <i className="bi bi-three-dots-vertical"></i>
           </a>
         </div>

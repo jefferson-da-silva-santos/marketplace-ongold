@@ -5,7 +5,7 @@ import LogoLogin from "../LogoLogin";
 import GroupInput from "../GroupInput";
 import users from "../../data/users.json";
 
-const LoginForm = ({ login, changeMessage, setUser }) => {
+const LoginForm = ({ login, changeMessage, setUser, handleNotFound }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -98,7 +98,7 @@ const LoginForm = ({ login, changeMessage, setUser }) => {
             Entrar
           </button>
           <div className="form-group">
-            <a href="#" className="form-group__text">
+            <a onClick={handleNotFound} className="form-group__text">
               * Esqueci minha senha *
             </a>
           </div>

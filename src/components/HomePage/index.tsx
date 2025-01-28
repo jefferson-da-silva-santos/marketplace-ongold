@@ -8,7 +8,7 @@ import CardFillterProducts from "../CardFillterProducts";
 import FooterHome from "../FooterHome";
 import NavHome from "../NavHome";
 
-const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart, setStage, formatCurrencyBRL }) => {
+const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, setProductsCart, setStage, formatCurrencyBRL }) => {
   const [products, setProducts] = useState(productsArr);
   const [itensPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(0);
@@ -37,7 +37,7 @@ const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart,
     const interval = setInterval(handleImgBanner, 60000); // Atualiza a cada 1 minuto
     return () => clearInterval(interval);
   }, []);
-  
+
   /*
   Função responsável por filtrar o array de produtos com base na categoria
   */
@@ -77,7 +77,8 @@ const HomePage = ({ changeMessage, payment, user, productsCart, setProductsCart,
       <button className="btn-cart-1" onClick={() => {
         setStage("payment");
       }}><span className="quant-cart">{productsCart.length}</span><i className="bi bi-cart-fill"></i></button>
-      <NavHome payment={payment} user={user} handleSearchProducts={handleSearchProducts} />
+
+      <NavHome handleNotFound={handleNotFound} changeMessage={changeMessage} payment={payment} user={user} handleSearchProducts={handleSearchProducts} />
       <main className="container-home__main">
         <BannerHome currentImgBanner={currentImgBanner} />
         <CardFillterProducts

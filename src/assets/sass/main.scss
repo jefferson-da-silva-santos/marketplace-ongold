@@ -2,7 +2,7 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 @import url("https://fonts.googleapis.com/css2?family=Doppio+One&display=swap");
 
-$font-secundary: "Doppio One", serif;
+$font-secundary: "Doppio One", Helvetica, sans-serif;
 
 * {
   margin: 0;
@@ -712,6 +712,16 @@ $font-secundary: "Doppio One", serif;
   }
 }
 
+.container-not-found {
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  @include flex-box(row, center, center, 0);
+
+  .card-not-found {
+    
+  }
+}
+
 // Responsive
 
 @include media-query(922px) {
@@ -967,6 +977,7 @@ $font-secundary: "Doppio One", serif;
   padding: 2rem 1rem;
 }
 }
+
 @include media-query(375px) {
   .empty-cart {
     flex-direction: column;
@@ -991,6 +1002,7 @@ $font-secundary: "Doppio One", serif;
     padding: 0 1rem 2em 1rem;
   }
 }
+
 @include media-query(327px) {
   .main-payment .card-itens-payment {
     width: 18em;
