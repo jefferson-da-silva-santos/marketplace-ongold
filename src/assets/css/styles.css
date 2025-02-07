@@ -636,6 +636,7 @@
   background: #a8a8a8; /* Cor mais escura ao passar o mouse */
 }
 .main-payment .card-itens-payment__content__product {
+  position: relative;
   width: 100%;
   padding: 1.5rem;
   padding-bottom: 1em;
@@ -645,6 +646,26 @@
   grid-template-rows: 1fr;
   column-gap: 1em;
   row-gap: 0;
+}
+.main-payment .card-itens-payment__content__product .group-buttons-item-cart {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  right: 0;
+}
+.main-payment .card-itens-payment__content__product .group-buttons-item-cart__quant {
+  width: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.main-payment .card-itens-payment__content__product .group-buttons-item-cart__btn {
+  width: 2em;
 }
 .main-payment .card-itens-payment__content__product__img {
   display: flex;

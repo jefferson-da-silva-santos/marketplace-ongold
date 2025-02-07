@@ -12,6 +12,13 @@ const ProductCart = ({formatCurrencyBRL, product, productsCart, setProductsCart,
 
   return (
     <div key={product.id} className="card-itens-payment__content__product">
+
+    <div className="group-buttons-item-cart">
+      <button className="group-buttons-item-cart__btn">+</button>
+      <div className="group-buttons-item-cart__quant">9</div>
+      <button className="group-buttons-item-cart__btn">-</button>
+    </div>
+
     <div className="card-itens-payment__content__product__img">
       <img
         className="card-itens-payment__content__product__img__img"

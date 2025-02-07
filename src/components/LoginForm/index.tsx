@@ -5,7 +5,7 @@ import LogoLogin from "../LogoLogin";
 import users from "../../data/users.json";
 import { useFormik } from "formik";
 
-const LoginForm = ({ login, changeMessage, setUser, handleNotFound }) => {
+const LoginForm = ({ login, changeMessage, handleNotFound }) => {
   const validate = (values) => {
     const errors = {};
 
@@ -29,7 +29,7 @@ const LoginForm = ({ login, changeMessage, setUser, handleNotFound }) => {
       errors.password = "A senha deve conter pelo menos um número";
     } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(values.password)) {
       errors.password = "A senha deve conter pelo menos um caractere especial";
-    }                     
+    }
 
     return errors;
   };
@@ -57,9 +57,13 @@ const LoginForm = ({ login, changeMessage, setUser, handleNotFound }) => {
     onSubmit: (values) => {
       if (searchUser(values.email, values.password)) {
         login();
-        changeMessage('Login realizado!', 'green', 1000);
+        changeMessage("Login realizado!", "green", 1000);
       } else {
-        changeMessage("E-mail ou senha inválidos. Verifique suas credenciais e tente novamente.", 'red', 4000);
+        changeMessage(
+          "E-mail ou senha inválidos. Verifique suas credenciais e tente novamente.",
+          "red",
+          4000
+        );
       }
     },
   });

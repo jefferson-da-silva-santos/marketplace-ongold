@@ -67,7 +67,7 @@ const App = () => {
       >
         <p className="message__txt">{message}</p>
       </div> 
-      {stage === "login" && <LoginForm setUser={setUser} login={login} changeMessage={changeMessage} handleNotFound={handleNotFound}/>}
+      {stage === "login" && <LoginForm login={login} changeMessage={changeMessage} handleNotFound={handleNotFound}/>}
       {stage === "home" && <HomePage handleNotFound={handleNotFound} formatCurrencyBRL={formatCurrencyBRL} changeMessage={changeMessage} productsCart={productsCart} setProductsCart={setProductsCart} user={user} payment={payment} setStage={setStage}/>}
       {stage === "payment" && <PaymentPage handleNotFound={handleNotFound} formatCurrencyBRL={formatCurrencyBRL} productsCart={productsCart} setProductsCart={setProductsCart} setStage={setStage} changeMessage={changeMessage}/>}
     </div>
