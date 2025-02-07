@@ -37,21 +37,21 @@ const App = () => {
   // Função para os recursos que ainda estão em construção
   const handleNotFound = (e) => {
     e.preventDefault();
-    changeMessage('Recurso ainda em construção!', "rgb(255, 63, 63)");
+    changeMessage('Recurso ainda em construção!', "rgb(255, 63, 63)", 2000);
   }
 
   const [messageVisible, setMessageVisible] = useState(false);
   const [colorMessage, setColorMessage] = useState("red");
 
   // Função de alterar mesagem para o usuário
-  const changeMessage = (text, color) => {
+  const changeMessage = (text, color, temp) => {
     setMessage(text);
     setMessageVisible(true);
     setColorMessage(color);
     setTimeout(() => {
       setMessage("");
       setMessageVisible(false);
-    }, 3000);
+    }, temp);
   };
 
   return (

@@ -78,7 +78,7 @@ const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, 
         setStage("payment");
       }}><span className="quant-cart">{productsCart.length}</span><i className="bi bi-cart-fill"></i></button>
 
-      <NavHome handleNotFound={handleNotFound} changeMessage={changeMessage} payment={payment} user={user} handleSearchProducts={handleSearchProducts} />
+      <NavHome setStage={setStage} handleNotFound={handleNotFound} changeMessage={changeMessage} payment={payment} user={user} handleSearchProducts={handleSearchProducts} />
       <main className="container-home__main">
         <BannerHome currentImgBanner={currentImgBanner} />
         <CardFillterProducts

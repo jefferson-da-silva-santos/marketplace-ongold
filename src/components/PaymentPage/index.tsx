@@ -9,7 +9,7 @@ import EmptyCart from "../EmptyCart";
 const PaymentPage = ({ handleNotFound, setStage, productsCart, setProductsCart, changeMessage, formatCurrencyBRL }) => {
   return (
     <Container className={"container-payment"}>
-      <HeaderPayment handleNotFound={handleNotFound}/>
+      <HeaderPayment setStage={setStage} handleNotFound={handleNotFound}/>
       <main className="main-payment">
         {productsCart.length === 0 && (
           <EmptyCart setStage={setStage}/>

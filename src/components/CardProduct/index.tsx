@@ -22,8 +22,8 @@ const CardProduct = ({
         <h2 className="card-product__title">{title}</h2>
         <p className="card-product__description">{description}</p>
         <div className="preces-group">
-          <p className="card-product__website-price">R${formatCurrencyBRL(webSitePrice)}</p>
-          <p className="card-product__store-price">R${formatCurrencyBRL(storePrice)}</p>
+          <p className="card-product__website-price">{formatCurrencyBRL(webSitePrice)}</p>
+          <p className="card-product__store-price">{formatCurrencyBRL(storePrice)}</p>
         </div>
         <a
           onClick={(e) => {
@@ -33,7 +33,7 @@ const CardProduct = ({
             const product = products.find((product) => product.id === id);
 
             if (!product) {
-              changeMessage("Produto não encontrado", "rgb(255, 63, 63)");
+              changeMessage("Produto não encontrado", "rgb(255, 63, 63)", 2000);
               return;
             }
 
@@ -70,7 +70,7 @@ const CardProduct = ({
             // Mensagem de sucesso
             changeMessage(
               "Produto adicionado ao carrinho",
-              "rgb(115, 187, 115)"
+              "rgb(115, 187, 115)", 1000
             );
             console.log(productsCart);
             

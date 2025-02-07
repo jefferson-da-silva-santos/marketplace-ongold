@@ -2,60 +2,37 @@ import React, { useState } from "react";
 import Container from "../Container";
 import CardLogin from "../CardLogin";
 import LogoLogin from "../LogoLogin";
-import GroupInput from "../GroupInput";
 import users from "../../data/users.json";
+import { useFormik } from "formik";
 
 const LoginForm = ({ login, changeMessage, setUser, handleNotFound }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const validate = (values) => {
+    const errors = {};
 
-  // Função para fazer login
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateDateUsers(email, password)) {
-      if (searchUser(email, password)) {
-        changeMessage("Login realizado!", "rgb(115, 187, 115)");
-        const username = getNameUserPerEmail(email);
-        setUser(username);
-        login();
-      } else {
-        changeMessage("O usuário não existe!", "rgb(255, 63, 63)");
-      }
-    } else {
-      changeMessage("Passe um email e uma senha válidos!", "rgb(255, 63, 63)");
-    }
-  };
-
-  /*
-   Função responsável por retornar o nome do usuário através do email
-   Esse nome é enviado para a página Home
-   */
-  const getNameUserPerEmail = (email: string) => {
-    return users.find((user) => user.email === email)?.name;
-  };
-
-  // Função que faz a validação dos dados passados pelo usuário
-  const validateDateUsers = (email: string, password: string) => {
-    if (typeof email !== "string" || email.trim() === "") {
-      return false;
-    }
-    if (
-      typeof password !== "string" ||
-      password.trim() === "" ||
-      password.length < 6
+    if (!values.email) {
+      errors.email = "Campo obrigatório";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
     ) {
-      return false;
+      errors.email = "Endereço de email inválido";
     }
-    return true;
-  };
 
-  // Função que faz a a busca do email e senha no arquivo json de dados
-  const searchUser = (emailUser: string, passwordUser: string) => {
-    return users.some(
-      (user) => user.email === emailUser && user.password === passwordUser
-    );
-  };
+    if (!values.password) {
+      errors.password = "Campo obrigatório";
+    } else if (values.password.length < 8) {
+      errors.password = "A senha deve ter pelo menos 8 caracteres";
+    } else if (!/[A-Z]/.test(values.password)) {
+      errors.password = "A senha deve ter pelo menos uma letra maiúscula";
+    } else if (!/[a-z]/.test(values.password)) {
+      errors.password = "A senha deve ter pelo menos uma letra minúscula";
+    } else if (!/[0-9]/.test(values.password)) {
+      errors.password = "A senha deve conter pelo menos um número";
+    } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(values.password)) {
+      errors.password = "A senha deve conter pelo menos um caractere especial";
+    }                     
 
+    return errors;
+  };
   // Função de alterar vizibilidade da senha
   const [showPassword, setShowPassword] = useState(false);
 
@@ -65,36 +42,84 @@ const LoginForm = ({ login, changeMessage, setUser, handleNotFound }) => {
     setShowPassword(!showPassword);
   };
 
+  const searchUser = (emailUser: string, passwordUser: string) => {
+    return users.some(
+      (user) => user.email === emailUser && user.password === passwordUser
+    );
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validate,
+    onSubmit: (values) => {
+      if (searchUser(values.email, values.password)) {
+        login();
+        changeMessage('Login realizado!', 'green', 1000);
+      } else {
+        changeMessage("E-mail ou senha inválidos. Verifique suas credenciais e tente novamente.", 'red', 4000);
+      }
+    },
+  });
+
   return (
     <Container className={"container-login"}>
       <CardLogin>
         <LogoLogin />
-        <form className="form">
-          <GroupInput
-            classIcon={"bi-envelope-fill"}
-            onClick={(e) => {
-              e.preventDefault();
-            }}
-            id={"email"}
-            name={"email"}
-            placeholder={"Digite seu email ou número"}
-            type={"email"}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-          <GroupInput
-            classIcon={!showPassword ? "bi-eye-slash" : "bi-eye"}
-            onClick={handleShowPassword}
-            id={"password"}
-            name={"password"}
-            placeholder={"Digite sua senha"}
-            type={!showPassword ? "password" : "text"}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-          <button className="btn-form" onClick={handleSubmit}>
+        <form className="form" onSubmit={formik.handleSubmit}>
+          <div className="group-input">
+            <a
+              href=""
+              className="group-input__icon"
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <i className={`bi bi-envelope-fill`}></i>
+            </a>
+            <input
+              required
+              className="group-input__input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Digite seu email ou número"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <span className="error-form">{formik.errors.email}</span>
+            ) : null}
+          </div>
+          <div className="group-input">
+            <a
+              href=""
+              className="group-input__icon"
+              onClick={handleShowPassword}
+            >
+              <i
+                className={`bi ${!showPassword ? "bi-eye-slash" : "bi-eye"}`}
+              ></i>
+            </a>
+            <input
+              required
+              className="group-input__input"
+              type={!showPassword ? "password" : "text"}
+              name="password"
+              id="password"
+              placeholder="Digite sua senha"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
+            />
+            {formik.touched.password && formik.errors.password ? (
+              <span className="error-form">{formik.errors.password}</span>
+            ) : null}
+          </div>
+          <button type="submit" className="btn-form">
             Entrar
           </button>
           <div className="form-group">

@@ -7,7 +7,7 @@ const ProductCart = ({formatCurrencyBRL, product, productsCart, setProductsCart,
     e.preventDefault();
     const newProducts = productsCart.filter((productCart) => productCart.id !== product.id);
     setProductsCart(newProducts);
-    changeMessage("Produto removido do carrinho", "rgb(255, 63, 63)");
+    changeMessage("Produto removido do carrinho", "rgb(255, 63, 63)", 1000);
    }
 
   return (

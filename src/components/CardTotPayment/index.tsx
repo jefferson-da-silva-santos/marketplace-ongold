@@ -15,7 +15,7 @@ const CardTotPayment = ({formatCurrencyBRL, productsCart, setProductsCart, chang
         </div>
         <div className="card-tot-payment__itens">
           <p className="card-tot-payment__itens__text-1">Itens <span>({productsCart.length})</span></p>
-          <p className="card-tot-payment__itens__text">R$ {formatCurrencyBRL(total)}</p>
+          <p className="card-tot-payment__itens__text">{formatCurrencyBRL(total)}</p>
         </div>
         <div className="card-tot-payment__freight">
           <p className="card-tot-payment__freight__text-1">Frete</p>
@@ -23,13 +23,13 @@ const CardTotPayment = ({formatCurrencyBRL, productsCart, setProductsCart, chang
         </div>
         <div className="card-tot-payment__total">
           <p className="card-tot-payment__total__text-1">Total a pagar</p>
-          <p className="card-tot-payment__total__text">R$ {formatCurrencyBRL(Number(totalWithFreight))}</p>
+          <p className="card-tot-payment__total__text">{formatCurrencyBRL(Number(totalWithFreight))}</p>
         </div>
       </section>
       <button onClick={
         () => {
           setProductsCart([]);
-          changeMessage('Seu pedido foi enviado!', 'rgb(115, 187, 115)');
+          changeMessage('Seu pedido foi enviado!', 'rgb(115, 187, 115)', 3000);
         }
       } className="card-tot-payment__btn">Finalizar compra</button>
     </div>

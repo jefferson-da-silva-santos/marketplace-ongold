@@ -75,6 +75,14 @@
   align-items: center;
   gap: 0;
   width: 100%;
+  position: relative;
+}
+.group-input .error-form {
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  font-size: 0.75em;
+  color: red;
 }
 .group-input__icon {
   font-size: 1.7rem;
@@ -144,10 +152,19 @@
 .container-home__nav__primary {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 0;
   padding: 0 1rem;
+}
+.container-home__nav__primary .group-nav-home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 51em;
 }
 .container-home__nav__primary .menu {
   display: flex;
@@ -194,6 +211,64 @@
   background-color: white;
   border-radius: 25px;
   padding: 4px 1rem 4px 6px;
+  cursor: pointer;
+  position: relative;
+}
+.container-home__nav__primary .menu-icons .card-user .menu-user {
+  overflow: hidden;
+  left: 13px;
+  width: 83px;
+  height: 41px;
+  background-color: rgb(242.25, 242.25, 242.25);
+  position: absolute;
+  top: 37px;
+  border-radius: 0px 0px 15px 15px;
+  border-top: 1px solid rgb(229.5, 229.5, 229.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  animation: showMenuUser 0.5s ease 0s 1 normal forwards;
+}
+.container-home__nav__primary .menu-icons .card-user .menu-user ul {
+  list-style: none;
+  width: 100%;
+}
+.container-home__nav__primary .menu-icons .card-user .menu-user ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.container-home__nav__primary .menu-icons .card-user .menu-user ul li:hover {
+  background-color: rgb(229.5, 229.5, 229.5);
+}
+.container-home__nav__primary .menu-icons .card-user .menu-user ul i {
+  color: black;
+  font-size: 1.3rem;
+  margin-right: 5px;
+}
+.container-home__nav__primary .menu-icons .card-user .menu-user ul span {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.container-home__nav__primary .menu-icons .card-user .menu-user-hidden {
+  display: none;
+}
+.container-home__nav__primary .menu-icons .card-user .menu-user-show {
+  display: flex;
+}
+@keyframes showMenuUser {
+  0% {
+    height: 1px;
+  }
+  100% {
+    height: 41px;
+  }
 }
 .container-home__nav__primary .menu-icons .card-user__img {
   background-color: rgb(220, 220, 220);
@@ -249,6 +324,9 @@
 .banner-home {
   border: 1px solid white;
   height: 16em;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 50em;
   margin-bottom: 2rem;
   margin-top: 2rem;
   background-color: #ccc;
@@ -452,6 +530,7 @@
 .container-payment .header-payment__title {
   text-transform: uppercase;
   color: #000000;
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: center;
