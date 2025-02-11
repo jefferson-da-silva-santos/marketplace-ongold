@@ -895,8 +895,23 @@
   align-items: center;
   gap: 0;
 }
+@media screen and (max-width: 1014px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 30em;
+  }
+}
+@media screen and (max-width: 952px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 27em;
+  }
+}
 @media screen and (max-width: 922px) {
   .group-card-tot-payment .card-tot-payment {
+    width: 20em;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container-home__nav__secundary .group-search .search {
     width: 20em;
   }
 }
@@ -919,9 +934,32 @@
     width: 100%;
   }
 }
-@media screen and (max-width: 615px) {
+@media screen and (max-width: 778px) {
   .container-home__nav__secundary .group-search .search {
-    width: 23em;
+    width: 14em;
+  }
+}
+@media screen and (max-width: 716px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 12em;
+  }
+  .container-home__nav__secundary .menu-icons .card-user {
+    padding: 4px 9px 4px 6px;
+  }
+}
+@media screen and (max-width: 676px) {
+  .container-home__nav__secundary .menu .menu__text {
+    display: none;
+  }
+  .container-home__nav__secundary {
+    justify-content: space-between;
+    padding: 1.3rem 2rem;
+  }
+}
+@media screen and (max-width: 615px) {
+  .container-home__nav__secundary {
+    justify-content: space-between;
+    padding: 1.3rem 1rem;
   }
   .container-home__main {
     padding: 0 1rem 2em 1rem;
@@ -946,6 +984,13 @@
 @media screen and (max-width: 521px) {
   .card-product__title {
     font-size: 1rem;
+  }
+  .container-home__nav__secundary .menu-icons .card-user__img {
+    width: 25px;
+    height: 25px;
+  }
+  .container-home__nav__secundary .menu-icons .username {
+    font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 486px) {
@@ -992,6 +1037,12 @@
   }
   .card-product .preces-group {
     gap: 6px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 100%;
+    font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 452px) {
@@ -1060,11 +1111,11 @@
   }
 }
 @media screen and (max-width: 400px) {
-  .container-home__nav__secundary .group-search .search {
-    width: 16em;
-  }
   .container-home__nav__primary .menu-icons i {
     font-size: 1.2em;
+  }
+  .container-home__nav__secundary .menu-icons .card-user {
+    padding: 2px 8px 2px 2px;
   }
   .container-home__nav__primary .menu-icons .card-user {
     gap: 3px;
@@ -1082,6 +1133,10 @@
   .main-payment .card-itens-payment__content__product__img__img {
     width: 4em;
     height: 4em;
+  }
+  .container-home__nav__secundary .menu-icons i {
+    font-size: 1.2rem;
+    color: white;
   }
   .main-payment .card-itens-payment__content__product {
     padding: 1rem;
@@ -1111,9 +1166,6 @@
   .card-product__store-price {
     font-size: 0.8em;
   }
-  .container-home__nav__secundary .group-search .search {
-    width: 14em;
-  }
   .container-payment .header-payment .button-andrees {
     padding: 0.5rem 6px;
     font-size: 0.7em;
@@ -1130,6 +1182,9 @@
 @media screen and (max-width: 350px) {
   .main-payment .card-itens-payment {
     width: 19em;
+  }
+  .container-home__nav__secundary {
+    gap: 7px;
   }
 }
 @media screen and (max-width: 345px) {

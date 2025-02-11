@@ -66,12 +66,16 @@ const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, 
 
   const [categories] = useState(filterCategories(productsArr));
 
-  
+  const [quantityItensCart, setQuantityItensCart] = useState(0);
+
+  useEffect(() => {
+    setQuantityItensCart(productsCart.reduce((total, product) => total + product.quantity, 0));
+  }, [productsCart])
 
   return (
     <Container className={"container-home"}>
       <button className="btn-cart-1" onClick={() => setStage("payment")}>
-        <span className="quant-cart">{productsCart.length}</span>
+        <span className="quant-cart">{quantityItensCart}</span>
         <i className="bi bi-cart-fill"></i>
       </button>
 

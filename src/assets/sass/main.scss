@@ -177,7 +177,7 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
       }
 
       .menu {
-        @include flex-box(row, space-between, center, .5rem);
+        @include flex-box(row, space-between, center, 0.5rem);
 
         i {
           font-size: 2rem;
@@ -198,7 +198,7 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
       }
 
       .menu-icons {
-        @include flex-box(row, space-between, center, .7rem);
+        @include flex-box(row, space-between, center, 0.7rem);
 
         i {
           font-size: 1.5rem;
@@ -228,7 +228,7 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
             border-radius: 0px 0px 15px 15px;
             border-top: 1px solid darken(white, 10%);
             @include flex-box(column, center, center, 10px);
-            animation: showMenuUser .5s ease 0s 1 normal forwards;
+            animation: showMenuUser 0.5s ease 0s 1 normal forwards;
 
             ul {
               list-style: none;
@@ -236,7 +236,7 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
               li {
                 @include flex-box(row, center, center, 0);
                 width: 100%;
-                transition: all .3s ease;
+                transition: all 0.3s ease;
                 &:hover {
                   background-color: darken(white, 10%);
                 }
@@ -255,7 +255,7 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
           }
 
           .menu-user-hidden {
-            display: none
+            display: none;
           }
 
           .menu-user-show {
@@ -299,7 +299,7 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
           width: 35em;
           outline: none;
           font-size: 0.9rem;
-          margin-left: .4rem;
+          margin-left: 0.4rem;
           transition: all 0.4s ease;
           &:focus {
             padding-left: 1.5em;
@@ -832,8 +832,26 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
 
 // Responsive
 
+@include media-query(1014px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 30em;
+  }
+}
+
+@include media-query(952px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 27em;
+  }
+}
+
 @include media-query(922px) {
   .group-card-tot-payment .card-tot-payment {
+    width: 20em;
+  }
+}
+
+@include media-query(900px) {
+  .container-home__nav__secundary .group-search .search {
     width: 20em;
   }
 }
@@ -859,11 +877,37 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
   }
 }
 
-@include media-query(615px) {
+@include media-query(778px) {
   .container-home__nav__secundary .group-search .search {
-    width: 23em;
+    width: 14em;
+  }
+}
+
+@include media-query(716px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 12em;
   }
 
+  .container-home__nav__secundary .menu-icons .card-user {
+    padding: 4px 9px 4px 6px;
+  }
+}
+
+@include media-query(676px) {
+  .container-home__nav__secundary .menu .menu__text {
+    display: none;
+  }
+  .container-home__nav__secundary {
+    justify-content: space-between;
+    padding: 1.3rem 2rem;
+  }
+}
+
+@include media-query(615px) {
+  .container-home__nav__secundary {
+    justify-content: space-between;
+    padding: 1.3rem 1rem;
+  }
   .container-home__main {
     padding: 0 1rem 2em 1rem;
     height: 75em;
@@ -894,6 +938,15 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
 @include media-query(521px) {
   .card-product__title {
     font-size: 1rem;
+  }
+
+  .container-home__nav__secundary .menu-icons .card-user__img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .container-home__nav__secundary .menu-icons .username {
+    font-size: 0.8rem;
   }
 }
 
@@ -944,6 +997,13 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
   }
   .card-product .preces-group {
     gap: 6px;
+  }
+}
+
+@include media-query(480px) {
+  .container-home__nav__secundary .group-search .search {
+    width: 100%;
+    font-size: 0.8rem;
   }
 }
 
@@ -1017,11 +1077,11 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
 }
 
 @include media-query(400px) {
-  .container-home__nav__secundary .group-search .search {
-    width: 16em;
-  }
   .container-home__nav__primary .menu-icons i {
     font-size: 1.2em;
+  }
+  .container-home__nav__secundary .menu-icons .card-user {
+    padding: 2px 8px 2px 2px;
   }
   .container-home__nav__primary .menu-icons .card-user {
     gap: 3px;
@@ -1039,6 +1099,11 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
   .main-payment .card-itens-payment__content__product__img__img {
     width: 4em;
     height: 4em;
+  }
+
+  .container-home__nav__secundary .menu-icons i {
+    font-size: 1.2rem;
+    color: white;
   }
 
   .main-payment .card-itens-payment__content__product {
@@ -1074,9 +1139,6 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
   .card-product__store-price {
     font-size: 0.8em;
   }
-  .container-home__nav__secundary .group-search .search {
-    width: 14em;
-  }
   .container-payment .header-payment .button-andrees {
     padding: 0.5rem 6px;
     font-size: 0.7em;
@@ -1095,6 +1157,9 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
 @include media-query(350px) {
   .main-payment .card-itens-payment {
     width: 19em;
+  }
+  .container-home__nav__secundary {
+    gap: 7px;
   }
 }
 
