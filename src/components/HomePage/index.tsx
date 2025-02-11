@@ -7,22 +7,22 @@ import productsArr from "../../data/products.json";
 import CardFillterProducts from "../CardFillterProducts";
 import FooterHome from "../FooterHome";
 import NavHome from "../NavHome";
+import BasicPagination from "../BasicPagination"; // Importando o componente de paginação
 
 const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, setProductsCart, setStage, formatCurrencyBRL }) => {
   const [products, setProducts] = useState(productsArr);
   const [itensPerPage] = useState(5);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1); // Alterado para iniciar em 1 (Material-UI usa 1-based index)
   const totPage = Math.ceil(products.length / itensPerPage);
-  const init = currentPage * itensPerPage;
+  const init = (currentPage - 1) * itensPerPage;
   const end = init + itensPerPage;
   const productsPage = products.slice(init, end);
 
   const [currentImgBanner, setCurrentImgBanner] = useState("");
 
-  // Função responsável por alternar entre as imagens do banner
+  // Atualizar imagem do banner dinamicamente
   function handleImgBanner() {
     const currentMinute = new Date().getMinutes();
-
     if (currentMinute >= 0 && currentMinute < 20) {
       setCurrentImgBanner('url("/public/banner.png")');
     } else if (currentMinute >= 20 && currentMinute < 40) {
@@ -38,25 +38,19 @@ const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, 
     return () => clearInterval(interval);
   }, []);
 
-  /*
-  Função responsável por filtrar o array de produtos com base na categoria
-  */
+  // Função de filtro de produtos por categoria
   const filterArrProducts = (filter: string) => {
     return productsArr.filter((product) => product.category === filter);
   };
 
-  /*
-  Função responsáavel por filtrar as categorias de produtos existentes
-  */
+  // Filtrar categorias existentes
   const filterCategories = (arr: any) => {
     const arrCtg = Array.from(new Set(arr.map((item) => item.category)));
     arrCtg.unshift("Todas");
     return arrCtg;
   };
 
-  /*
-  Função responsável por manipular a busca de produtos a partir do seu nome
-  */
+  // Manipular busca de produtos pelo nome
   const handleSearchProducts = (e: any) => {
     const searchValue = (e.target as HTMLInputElement).value;
     if (searchValue === "") {
@@ -67,18 +61,26 @@ const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, 
       );
       setProducts(filteredProducts);
     }
-    setCurrentPage(0);
+    setCurrentPage(1);
   };
 
   const [categories] = useState(filterCategories(productsArr));
 
   return (
     <Container className={"container-home"}>
-      <button className="btn-cart-1" onClick={() => {
-        setStage("payment");
-      }}><span className="quant-cart">{productsCart.length}</span><i className="bi bi-cart-fill"></i></button>
+      <button className="btn-cart-1" onClick={() => setStage("payment")}>
+        <span className="quant-cart">{productsCart.length}</span>
+        <i className="bi bi-cart-fill"></i>
+      </button>
 
-      <NavHome setStage={setStage} handleNotFound={handleNotFound} changeMessage={changeMessage} payment={payment} user={user} handleSearchProducts={handleSearchProducts} />
+      <NavHome
+        setStage={setStage}
+        handleNotFound={handleNotFound}
+        changeMessage={changeMessage}
+        payment={payment}
+        user={user}
+        handleSearchProducts={handleSearchProducts}
+      />
       <main className="container-home__main">
         <BannerHome currentImgBanner={currentImgBanner} />
         <CardFillterProducts
@@ -90,40 +92,33 @@ const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, 
           searchProducts={filterArrProducts}
         />
         <GroupProducts>
-          {productsPage.map((item) => {
-            return (
-              <CardProduct
-                key={item.id}
-                products={products}
-                formatCurrencyBRL={formatCurrencyBRL}
-                id={item.id}
-                title={item.name}
-                imgSrc={item.srcImg}
-                description={item.description}
-                webSitePrice={item.websitePrice}
-                storePrice={item.storePrice}
-                setProductsCart={setProductsCart}
-                changeMessage={changeMessage}
-                productsCart={productsCart}
-              ></CardProduct>
-            );
-          })}
+          {productsPage.map((item) => (
+            <CardProduct
+              key={item.id}
+              products={products}
+              formatCurrencyBRL={formatCurrencyBRL}
+              id={item.id}
+              title={item.name}
+              imgSrc={item.srcImg}
+              description={item.description}
+              webSitePrice={item.websitePrice}
+              storePrice={item.storePrice}
+              setProductsCart={setProductsCart}
+              changeMessage={changeMessage}
+              productsCart={productsCart}
+            />
+          ))}
+
+          {/* Paginação utilizando Material-UI */}
           <div className="group-pagination">
-          {
-            Array.from(Array(totPage), (e, i) => {
-              return (
-                <button 
-                style={i === currentPage ? {transform: "scale(130%)"} : {}}
-                value={i} onClick={(e) => {
-                  setCurrentPage(Number((e.target as HTMLButtonElement).value));
-                  
-                }} className="btn-pagination" key={i}>{i + 1}</button>
-              )
-            })
-          }
+            <BasicPagination
+              quant={totPage}
+              handlePage={(event, value) => setCurrentPage(value)}
+              currentPage={currentPage}
+            />
           </div>
         </GroupProducts>
-      </main> 
+      </main>
       <FooterHome />
     </Container>
   );
