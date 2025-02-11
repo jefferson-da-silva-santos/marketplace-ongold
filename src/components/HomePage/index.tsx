@@ -66,6 +66,8 @@ const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, 
 
   const [categories] = useState(filterCategories(productsArr));
 
+  
+
   return (
     <Container className={"container-home"}>
       <button className="btn-cart-1" onClick={() => setStage("payment")}>

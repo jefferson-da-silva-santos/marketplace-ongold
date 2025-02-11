@@ -597,7 +597,7 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
           right: 0;
           border-radius: 13px;
           margin: 1rem;
-          border: 2px solid black;
+          border: 2px solid rgb(151, 151, 151);
 
           &__quant {
             width: 2em;
@@ -615,11 +615,11 @@ $font-secundary: "Doppio One", Helvetica, sans-serif;
 
           .btn__1 {
             border-radius: 10px 0px 0px 10px;
-            border-right: 2px solid black;
+            border-right: 2px solid rgb(151, 151, 151);
           }
           .btn__2 {
             border-radius: 0px 10px 10px 0px;
-            border-left: 2px solid black;
+            border-left: 2px solid rgb(151, 151, 151);
           }
         }
 
