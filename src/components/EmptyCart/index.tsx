@@ -1,6 +1,6 @@
 import React from "react";
 
-const EmptyCart = ({setStage}) => {
+const EmptyCart = ({ setStage }) => {
   return (
     <div className="empty-cart">
       <p className="empty-cart__text">* Seu carrinho está vazio</p>
