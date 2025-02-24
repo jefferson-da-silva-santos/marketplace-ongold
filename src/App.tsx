@@ -22,7 +22,7 @@ const App = () => {
   const [stage, setStage] = useState(stages[0].name);
   const [message, setMessage] = useState("");
   const [user, setUser] = useState('Username');
-  const [productsCart, setProductsCart] = useState<{ id: number; name: string; price: number }[]>([]);
+  const [productsCart, setProductsCart] = useState([]);
 
   // Função que faz a troca de página de login para página Home
   const login = () => {

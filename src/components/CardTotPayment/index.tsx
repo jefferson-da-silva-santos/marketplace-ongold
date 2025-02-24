@@ -6,6 +6,8 @@ const CardTotPayment = ({formatCurrencyBRL, productsCart, setProductsCart, chang
   const total = Number(productsCart.reduce((acc, product) => acc + product.websitePrice, 0).toFixed(2));
   // Calculando o valor total mais o frete
   const totalWithFreight = (total + 10).toFixed(2);
+  console.log(productsCart);
+  
 
   return (
     <div className="group-card-tot-payment">

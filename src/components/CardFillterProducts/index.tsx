@@ -24,7 +24,7 @@ const CardFillterProducts = ({ arrCategory, filterArrProducts, setProducts, prod
             setCurrentCategory(`Itens da categoria ${e.target.value}`);
             setProducts(filterArrProducts(e.target.value));
           }
-          currentPage(0);
+          currentPage(1);
         }}
         className="selectCategory"
         name=""
