@@ -6,7 +6,7 @@ import ProductCart from "../ProductCart";
 import CardTotPayment from "../CardTotPayment";
 import EmptyCart from "../EmptyCart";
 
-const PaymentPage = ({ handleNotFound, setStage, productsCart, setProductsCart, changeMessage, formatCurrencyBRL }) => {
+const PaymentPage = ({ setQuantityItensCart, quantityItensCart, handleNotFound, setStage, productsCart, setProductsCart, changeMessage, formatCurrencyBRL }) => {
   return (
     <Container className={"container-payment"}>
       <HeaderPayment setStage={setStage} handleNotFound={handleNotFound}/>
@@ -16,12 +16,12 @@ const PaymentPage = ({ handleNotFound, setStage, productsCart, setProductsCart, 
         )}
         {productsCart.length > 0 && (
           <>
-            <CardItensPayment  productsCart={productsCart}>
+            <CardItensPayment quantityItensCart={quantityItensCart}  productsCart={productsCart}>
               {productsCart.map((product) => {
-                return <ProductCart formatCurrencyBRL={formatCurrencyBRL} key={product.id} product={product} productsCart={productsCart} setProductsCart={setProductsCart} changeMessage={changeMessage}/>;
+                return <ProductCart setQuantityItensCart={setQuantityItensCart} formatCurrencyBRL={formatCurrencyBRL} key={product.id} product={product} productsCart={productsCart} setProductsCart={setProductsCart} changeMessage={changeMessage}/>;
               })}
             </CardItensPayment>
-            <CardTotPayment setProductsCart={setProductsCart} changeMessage={changeMessage} formatCurrencyBRL={formatCurrencyBRL} productsCart={productsCart}/>
+            <CardTotPayment quantityItensCart={quantityItensCart} setProductsCart={setProductsCart} changeMessage={changeMessage} formatCurrencyBRL={formatCurrencyBRL} productsCart={productsCart}/>
           </>
         )}
       </main>

@@ -9,7 +9,7 @@ import FooterHome from "../FooterHome";
 import NavHome from "../NavHome";
 import BasicPagination from "../BasicPagination"; // Importando o componente de paginação
 
-const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, setProductsCart, setStage, formatCurrencyBRL }) => {
+const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, setProductsCart, setStage, formatCurrencyBRL, quantityItensCart, setQuantityItensCart }) => {
   const [products, setProducts] = useState(productsArr);
   const [itensPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1); // Alterado para iniciar em 1 (Material-UI usa 1-based index)
@@ -65,8 +65,6 @@ const HomePage = ({ handleNotFound, changeMessage, payment, user, productsCart, 
   };
 
   const [categories] = useState(filterCategories(productsArr));
-
-  const [quantityItensCart, setQuantityItensCart] = useState(0);
 
   useEffect(() => {
     setQuantityItensCart(productsCart.reduce((total, product) => total + product.quantity, 0));

@@ -42,6 +42,7 @@ const App = () => {
 
   const [messageVisible, setMessageVisible] = useState(false);
   const [colorMessage, setColorMessage] = useState("red");
+  const [quantityItensCart, setQuantityItensCart] = useState(0);
 
   // Função de alterar mesagem para o usuário
   const changeMessage = (text, color, temp) => {
@@ -68,8 +69,8 @@ const App = () => {
         <p className="message__txt">{message}</p>
       </div> 
       {stage === "login" && <LoginForm login={login} changeMessage={changeMessage} handleNotFound={handleNotFound}/>}
-      {stage === "home" && <HomePage handleNotFound={handleNotFound} formatCurrencyBRL={formatCurrencyBRL} changeMessage={changeMessage} productsCart={productsCart} setProductsCart={setProductsCart} user={user} payment={payment} setStage={setStage}/>}
-      {stage === "payment" && <PaymentPage handleNotFound={handleNotFound} formatCurrencyBRL={formatCurrencyBRL} productsCart={productsCart} setProductsCart={setProductsCart} setStage={setStage} changeMessage={changeMessage}/>}
+      {stage === "home" && <HomePage quantityItensCart={quantityItensCart} setQuantityItensCart={setQuantityItensCart} handleNotFound={handleNotFound} formatCurrencyBRL={formatCurrencyBRL} changeMessage={changeMessage} productsCart={productsCart} setProductsCart={setProductsCart} user={user} payment={payment} setStage={setStage}/>}
+      {stage === "payment" && <PaymentPage setQuantityItensCart={setQuantityItensCart} quantityItensCart={quantityItensCart} handleNotFound={handleNotFound} formatCurrencyBRL={formatCurrencyBRL} productsCart={productsCart} setProductsCart={setProductsCart} setStage={setStage} changeMessage={changeMessage}/>}
     </div>
   );
 };

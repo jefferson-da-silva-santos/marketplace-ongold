@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useMemo } from "react";
 
-const CardTotPayment = ({formatCurrencyBRL, productsCart, setProductsCart, changeMessage}) => {
+const CardTotPayment = ({ quantityItensCart, formatCurrencyBRL, productsCart, setProductsCart, changeMessage }) => {
 
-  // Filtrando o valor total do carrinho
-  const total = Number(productsCart.reduce((acc, product) => acc + product.websitePrice, 0).toFixed(2));
+  // Memoriza o cálculo do total, será recalculado apenas quando productsCart mudar
+  const total = useMemo(() => {
+    return productsCart.reduce((acc, product) => acc + product.websitePrice, 0);
+  }, [productsCart]); // Recalcula sempre que productsCart mudar
+
   // Calculando o valor total mais o frete
-  const totalWithFreight = (total + 10).toFixed(2);
+  const totalWithFreight = total + 10;
+
   console.log(productsCart);
-  
 
   return (
     <div className="group-card-tot-payment">
@@ -16,7 +19,7 @@ const CardTotPayment = ({formatCurrencyBRL, productsCart, setProductsCart, chang
           <h3 className="card-tot-payment__header__title">Resumo carrinho</h3>
         </div>
         <div className="card-tot-payment__itens">
-          <p className="card-tot-payment__itens__text-1">Itens <span>({productsCart.length})</span></p>
+          <p className="card-tot-payment__itens__text-1">Itens <span>({quantityItensCart})</span></p>
           <p className="card-tot-payment__itens__text">{formatCurrencyBRL(total)}</p>
         </div>
         <div className="card-tot-payment__freight">
@@ -25,15 +28,15 @@ const CardTotPayment = ({formatCurrencyBRL, productsCart, setProductsCart, chang
         </div>
         <div className="card-tot-payment__total">
           <p className="card-tot-payment__total__text-1">Total a pagar</p>
-          <p className="card-tot-payment__total__text">{formatCurrencyBRL(Number(totalWithFreight))}</p>
+          <p className="card-tot-payment__total__text">{formatCurrencyBRL(totalWithFreight)}</p>
         </div>
       </section>
-      <button onClick={
-        () => {
-          setProductsCart([]);
-          changeMessage('Seu pedido foi enviado!', 'rgb(115, 187, 115)', 3000);
-        }
-      } className="card-tot-payment__btn">Finalizar compra</button>
+      <button onClick={() => {
+        setProductsCart([]); // Limpa o carrinho
+        changeMessage('Seu pedido foi enviado!', 'rgb(115, 187, 115)', 3000);
+      }} className="card-tot-payment__btn">
+        Finalizar compra
+      </button>
     </div>
   )
 }

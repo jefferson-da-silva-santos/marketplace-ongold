@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import productsArr from "../../data/products.json";
 
 const ProductCart = ({
@@ -7,8 +7,17 @@ const ProductCart = ({
   productsCart,
   setProductsCart,
   changeMessage,
+  setQuantityItensCart, // Recebe a função que vai controlar o set de quantidade
 }) => {
   const [productCart, setProductCart] = useState(product);
+
+  // Sincronizando productCart com o estado global de productsCart
+  useEffect(() => {
+    const productInCart = productsCart.find((item) => item.id === product.id);
+    if (productInCart) {
+      setProductCart(productInCart);
+    }
+  }, [productsCart, product.id]);
 
   // Função responsável por remover um item do carrinho de compras
   const removeProductCart = (e) => {
@@ -22,54 +31,61 @@ const ProductCart = ({
 
   const acrescentItem = () => {
     const v = productsArr.find((item) => item.id === product.id);
-    setProductCart((prevProductCart) => ({
-      ...prevProductCart,
-      quantity: prevProductCart.quantity + 1,
-      websitePrice: prevProductCart.websitePrice + v?.websitePrice,
-    }));
-    const updatedProductsCart = productsCart.map((item) => {
-      if (item.id === productCart.id) {
-        return productCart;
-      }
-      return item;
+    setProductCart((prevProductCart) => {
+      const updatedQuantity = prevProductCart.quantity + 1;
+      const updatedWebsitePrice = prevProductCart.websitePrice + v?.websitePrice;
+      const updatedProduct = {
+        ...prevProductCart,
+        quantity: updatedQuantity,
+        websitePrice: updatedWebsitePrice,
+      };
+
+      // Atualiza o carrinho global
+      const updatedProductsCart = productsCart.map((item) => 
+        item.id === prevProductCart.id ? updatedProduct : item
+      );
+      setProductsCart(updatedProductsCart);
+      setQuantityItensCart((prev) => prev + 1); // Incrementa o contador global de itens
+      return updatedProduct;
     });
-    setProductsCart(updatedProductsCart);
-    console.log(productsCart);
   };
 
   const decresentItem = () => {
     const v = productsArr.find((item) => item.id === product.id);
     setProductCart((prevProductCart) => {
-      const newQuantity = prevProductCart.quantity - 1;
-      const newWebsitePrice =
+      const updatedQuantity = prevProductCart.quantity - 1;
+      const updatedWebsitePrice =
         prevProductCart.websitePrice - (v?.websitePrice ?? 0);
-      console.log(newQuantity);
 
-      if (newQuantity === 0) {
-        // Remove the item from the cart if the quantity is zero
+      if (updatedQuantity <= 0) {
+        // Remove o item do carrinho se a quantidade for zero ou negativa
         const newProductsCart = productsCart.filter(
-          (item) => item.id !== productCart.id
+          (item) => item.id !== prevProductCart.id
         );
         setProductsCart(newProductsCart);
         changeMessage("Produto removido do carrinho", "rgb(255, 63, 63)", 1000);
-        console.log(newProductsCart);
+        setQuantityItensCart((prev) => prev - 1); // Decrementa o contador global de itens
+        return null;
       } else {
-        const updatedProductsCart = productsCart.map((item) => {
-          if (item.id === productCart.id) {
-            return productCart;
-          }
-          return item;
-        });
-        setProductsCart(updatedProductsCart);
-      }
+        const updatedProduct = {
+          ...prevProductCart,
+          quantity: updatedQuantity,
+          websitePrice: updatedWebsitePrice,
+        };
 
-      return {
-        ...prevProductCart,
-        quantity: newQuantity,
-        websitePrice: newWebsitePrice,
-      };
+        // Atualiza o carrinho global
+        const updatedProductsCart = productsCart.map((item) =>
+          item.id === prevProductCart.id ? updatedProduct : item
+        );
+        setProductsCart(updatedProductsCart);
+        setQuantityItensCart((prev) => prev - 1); // Decrementa o contador global de itens
+        return updatedProduct;
+      }
     });
   };
+
+  // Renderiza o produto no carrinho, removendo se necessário
+  if (!productCart) return null;
 
   return (
     <div key={product.id} className="card-itens-payment__content__product">
@@ -111,9 +127,7 @@ const ProductCart = ({
             Remover
           </button>
           <p className="group-price__price">
-            {formatCurrencyBRL(
-              Number(Number(productCart.websitePrice).toFixed(2))
-            )}
+            {formatCurrencyBRL(Number(Number(productCart.websitePrice).toFixed(2)))}
           </p>
         </div>
       </div>
